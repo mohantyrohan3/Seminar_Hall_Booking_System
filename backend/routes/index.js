@@ -37,30 +37,10 @@ router.post('/department_login',departmentPassport.authenticate('department', { 
 router.get('/details', async (req,res)=>{
 
   if(req.isAuthenticated()){
-    try{
-      const admin = await Admin.findOne({
-        email: req.user.email
-      })
-
-      if (!admin) { 
-        res.send({
-          details:req.user,
-          type:'Department'
-        })
-       }
-       else{
-        res.send({
-          details:req.user,
-          type:"Admin"
-        })
-       }
-    }
-
-    catch(err){
-       res.send({
-        error:err
-       })
-    }
+    res.send({
+      details:req.user
+    })
+    
   }
 
   
@@ -82,15 +62,25 @@ router.get('/details', async (req,res)=>{
 // Create Department Route
 router.post('/create_department',(req,res)=>{
 
-   const newUser = new Department({ email: req.body.email, password: hashSync(req.body.password, 10), department:req.body.department,head:req.body.head });
 
-  newUser.save()
-  .then((user) => {
-    res.status(201).json(user);
+  if(req.isAuthenticated() && req.user.type === 'Admin'){
+    const newUser = new Department({ email: req.body.email, password: hashSync(req.body.password, 10), department:req.body.department,head:req.body.head });
+  
+   newUser.save()
+   .then((user) => {
+     res.status(201).json(user);
+   })
+   .catch((error) => {
+     res.status(500).json({ error: 'Failed to create user' });
+   });
+  }
+
+  else{
+    res.send({
+      msg:"You are not authorized to create department"
   })
-  .catch((error) => {
-    res.status(500).json({ error: 'Failed to create user' });
-  });
+  }
+
 
 })
 
@@ -128,6 +118,8 @@ router.get('/logout', function(req, res) {
 
 
 
+
+router.use('/hall',require('./hall'));
 
 
 

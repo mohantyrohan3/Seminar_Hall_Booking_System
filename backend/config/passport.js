@@ -28,8 +28,23 @@ async function (email, password, done) {
 
 
   passport.serializeUser(function(user, cb) {
-    process.nextTick(function() {
-      cb(null, { id: user.id, email: user.email });
+    process.nextTick(async function() {
+      try{
+        const admin = await Admin.findOne({
+          email: user.email
+        })
+  
+        if (!admin) { 
+          cb(null, { id: user.id, email: user.email , type:'Department'});
+         }
+         else{
+          cb(null, { id: user.id, email: user.email,type:'Admin'});
+         }
+      }
+  
+      catch(err){
+          console.log(err);
+      }
     });
   });
   
