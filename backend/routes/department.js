@@ -55,6 +55,32 @@ router.post('/request_department' , (req,res)=>{
 
 
 
+// Show the department requests
+router.get('/show_department_requests',(req,res)=>{
+    if(req.isAuthenticated() && req.user.type === 'Admin'){
+        Department_Requests.find({},{ _id: 0})
+    .then((requests) => {
+      res.send({
+          requests:requests
+      })
+    })
+    .catch((error) => {
+      res.send({
+          err:err
+      })
+    });
+    }
+    else{
+        res.send({
+            msg:'You are not authorized to view the requests'
+        })
+    }
+})
+
+
+
+
+
 
 
 
