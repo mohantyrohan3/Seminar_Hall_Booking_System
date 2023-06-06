@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Admin = require("../models/admin");
 const { hashSync } = require('bcrypt');
-const passport = require('passport');
 const adminPassport = require('../config/passport');
 const Department = require('../models/department');
 const departmentPassport = require('../config/department_passport');
@@ -14,7 +13,7 @@ router.get('/',(req,res)=>{
 })
 
 
-
+// Admin Login Route
 router.post('/admin_login', adminPassport.authenticate('admin', { failureRedirect: '/failed' }), (req,res)=>{
     res.send({
         msg:'Successfully Logged In',
@@ -24,6 +23,7 @@ router.post('/admin_login', adminPassport.authenticate('admin', { failureRedirec
 
 
 
+// Department Login Route
 router.post('/department_login',departmentPassport.authenticate('department', { failureRedirect: '/failed' }),(req,res)=>{
   res.send({
     msg:'Successfully Logged In',
@@ -33,7 +33,7 @@ router.post('/department_login',departmentPassport.authenticate('department', { 
 
 
 
-
+// Get Details of Authenticated User Route
 router.get('/details', async (req,res)=>{
 
   if(req.isAuthenticated()){
@@ -78,6 +78,8 @@ router.get('/details', async (req,res)=>{
 
 
 
+
+// Create Department Route
 router.post('/create_department',(req,res)=>{
 
    const newUser = new Department({ email: req.body.email, password: hashSync(req.body.password, 10), department:req.body.department,head:req.body.head });
@@ -99,14 +101,17 @@ router.post('/create_department',(req,res)=>{
 
 
 
-
+// Failed Route
 router.get('/failed',(req,res)=>{
     res.send({
-        'msg':'Error in Logging IN'
+        'msg':'Error in Logging In'
     })
 })
 
 
+
+
+// Logging Out Route
 router.get('/logout', function(req, res) {
     req.logout(function(err) {
       if (err) {
