@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Department = require('../models/department');
-
+const Department_Requests = require('../models/department_requests');
 
 router.get('/', (req,res)=>{
     res.send({
@@ -27,6 +27,36 @@ router.get('/show_departments',(req,res)=>{
       })
     });
 })
+
+
+
+
+
+// Department Requests
+router.post('/request_department' , (req,res)=>{
+
+    const newUser = new Department_Requests({ 
+        email:req.body.email,
+        department:req.body.department,
+        head:req.body.head
+     });
+
+    newUser.save()
+        .then((user) => {
+        res.status(201).json(user);
+        })
+        .catch((error) => {
+        res.status(500).json({ error: 'Failed to create user' });
+        });
+})
+
+
+
+
+
+
+
+
 
 
 
