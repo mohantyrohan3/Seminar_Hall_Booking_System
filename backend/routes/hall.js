@@ -44,6 +44,42 @@ router.post('/create_hall',(req,res)=>{
 
 
 
+// Getting all the Halls
+router.get('/view_halls', (req,res)=>{
+    Hall.find({},{ _id: 0 })
+  .then((halls) => {
+    res.send({
+        halls:halls
+    })
+  })
+  .catch((error) => {
+    res.send({
+        err:err
+    })
+  });
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = router;
