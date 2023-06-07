@@ -64,6 +64,37 @@ router.get('/view_halls', (req,res)=>{
 
 
 
+// Change the status of the halls
+router.post('/clear_hall',async (req,res)=>{
+    
+    if(req.isAuthenticated() && req.user.type === 'Admin'){
+        try{
+            const updatedDocument = await Hall.findOneAndUpdate(
+                { name: req.body.name },
+                {department:"",event:"",status:"Not Filled"},
+                { new: true }
+              );
+              res.send({
+                status:'Changed Status',
+                updates:updatedDocument
+              })
+        }
+        catch(err){
+            res.send({
+                error:err
+            })
+        }
+    }
+    else{
+        res.send({
+            msg:'You are not authorized'
+        })
+    }
+})
+
+
+
+
 
 
 
