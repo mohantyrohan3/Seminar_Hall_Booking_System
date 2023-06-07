@@ -121,6 +121,7 @@ router.get('/logout', function(req, res) {
 
 router.use('/hall',require('./hall'));
 router.use('/department',require('./department'));
+router.use('/booking',require('./booking'));
 
 
 
