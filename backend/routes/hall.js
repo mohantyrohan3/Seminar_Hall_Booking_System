@@ -70,16 +70,4 @@ router.get('/view_halls', (req,res)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
