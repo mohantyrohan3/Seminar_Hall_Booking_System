@@ -27,10 +27,19 @@
 
 .btn-home-card-btn{
     background: #D76A28 !important;
-    border-radius: 50px !important;
+    border-radius: 1rem !important;
     font-family: 'Julee', cursive !important;
     width: 30%;
     color: white !important;
     font-size: large;
     margin-bottom: 1rem !important;
 }
+
+
+
+@media only screen and (max-width: 350px) {
+    .btn-home-card-btn{
+        width: 70%;
+    }
+    
+  }

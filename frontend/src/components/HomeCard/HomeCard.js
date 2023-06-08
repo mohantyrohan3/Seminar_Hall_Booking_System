@@ -13,7 +13,7 @@ export default function HomeCard() {
     <>
 
         <Grid container spacing={2} justifyContent={'space-evenly'} className='grid-card-home'>
-                <Grid item xs={4}>
+                <Grid item xs={11} sm={8} md={8} lg={7} xl={4}>
                 <Card sx={{}} className='home-card'>
                 <CardContent>
                         <Typography gutterBottom variant="h4" component="div" className='text-card-home'>
@@ -33,7 +33,7 @@ export default function HomeCard() {
                 </Grid>
 
 
-                <Grid item xs={4}>
+                <Grid item xs={11} sm={8} md={8} lg={7} xl={4}>
                 <Card sx={{ }} className='home-card'>
                 <CardContent>
                         <Typography gutterBottom variant="h4" component="div" className='text-card-home'>

@@ -3,6 +3,7 @@ import "./HomeLower.css"
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import HomeCard from '../HomeCard/HomeCard';
+import HomeFooter from '../HomeFooter/HomeFooter';
 
 export default function HomeLower() {
   return (
@@ -42,6 +43,10 @@ export default function HomeLower() {
       <br />
         <br />
         <HomeCard/>
+        <br/>
+        <br/>
+
+        <HomeFooter/>
 
 
         
