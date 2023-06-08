@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+
+.upper-div{
+    background: url("../../assets/HomePic.png");
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.navbar{
+    position: absolute;
+    width: 100%;
+    top: 0rem;
+    color: white;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(217, 217, 217, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.list-item{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 0;
+    font-family: 'Julee', cursive;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.list-item-children{
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.lower-div{
+    background: linear-gradient(267.51deg, #272F31 1.16%, #0D1017 98.8%);
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+
+@media only screen and (max-width: 300px) {
+    .list-item-children{
+       font-size: 1rem;
+    }
+  }
+
+
+
+@media only screen and (max-width: 250px) {
+    .list-item-children{
+       font-size: 0.7rem;
+    }
+  }
+
+  @media only screen and (max-width: 170px) {
+    .list-item-children{
+       font-size: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 130px) {
+    .list-item-children{
+       font-size: 0.3rem;
+    }
+  }

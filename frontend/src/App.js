@@ -1,10 +1,13 @@
 import './App.css';
+import HomeLower from './components/HomeLower/HomeLower';
+import HomeUpper from './components/HomeUpper/HomeUpper';
 
 function App() {
   return (
-    <div className="App">
-      Seminar Hall Booking
-    </div>
+    <>
+    <HomeUpper/>
+    <HomeLower/>
+    </>
   );
 }
 
