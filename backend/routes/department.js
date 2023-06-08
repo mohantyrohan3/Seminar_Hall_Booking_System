@@ -80,6 +80,30 @@ router.get('/show_department_requests',(req,res)=>{
 
 
 
+// Cancel the Department Request
+router.post('/delete_department_request',async(req,res)=>{
+    if(req.isAuthenticated() && req.user.type === 'Admin'){
+        try {
+            const deletedDocument = await Department_Requests.findOneAndDelete({ email: req.body.email });
+            res.send({
+                delete:deletedDocument
+            })
+          } catch (error) {
+            res.send({
+                error:error
+            })
+          }
+    }
+    else{
+        res.send({
+            msg:'You are not authorized to view the requests'
+        })
+    }
+})
+
+
+
+
 
 
 

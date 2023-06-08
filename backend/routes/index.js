@@ -6,12 +6,30 @@ const adminPassport = require('../config/passport');
 const Department = require('../models/department');
 const departmentPassport = require('../config/department_passport');
 const nodemailer = require("nodemailer");
-const details = require('./constants')
+const details = require('./constants');
+const Department_Requests = require('../models/department_requests');
 
 router.get('/',(req,res)=>{
     res.send({
         "HELLO WORLD":"SERVER STARTED"
     })
+})
+
+
+
+router.post('/create_admin',(req,res)=>{
+  const newUser = new Admin({ 
+    email:req.body.email,
+    password:hashSync(req.body.password, 10)
+   });
+
+  newUser.save()
+    .then((user) => {
+      res.status(201).json(user);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'Failed to create user' });
+    });
 })
 
 
@@ -40,6 +58,7 @@ router.get('/details', async (req,res)=>{
 
   if(req.isAuthenticated()){
     res.send({
+      status:"Authenticated",
       details:req.user
     })
     
@@ -48,6 +67,7 @@ router.get('/details', async (req,res)=>{
   
   else{
     res.send({
+      status:"Not Authenticated",
       msg:'Not Authenticated'
     })
   }
@@ -68,6 +88,7 @@ router.post('/create_department',async(req,res)=>{
   if(req.isAuthenticated() && req.user.type === 'Admin'){
     const newUser = new Department({ email: req.body.email, password: hashSync(req.body.password, 10), department:req.body.department,head:req.body.head });
     try{
+        const deletedDocument = await Department_Requests.findOneAndDelete({ email:req.body.email });
         await newUser.save()
         const testAccount = await nodemailer.createTestAccount();
 
@@ -91,7 +112,8 @@ router.post('/create_department',async(req,res)=>{
         });
         res.send({
           department:newUser,
-          mail:info
+          mail:info,
+          deleted_request:deletedDocument
         })
     }
    catch(error) {
@@ -120,7 +142,7 @@ router.post('/create_department',async(req,res)=>{
 // Failed Route
 router.get('/failed',(req,res)=>{
     res.send({
-        'msg':'Error in Logging In'
+        'error':'Error in Logging In'
     })
 })
 
