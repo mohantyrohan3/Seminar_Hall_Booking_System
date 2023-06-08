@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+.lower-div{
+    background: linear-gradient(267.51deg, #272F31 1.16%, #0D1017 98.8%);
+    /* height: 100vh; */
+    width: 100%;
+}
+
+
+
+.title{
+    text-align: center;
+    width: 100%;
+    /* height: 2rem; */
+    color: white;
+    font-size: 2.3rem;
+    font-family: 'Julee', cursive;
+    position: relative;
+    bottom: 6rem;
+}
+/* 
+.title div{
+    width: 80%;
+} */
+
+.desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    /* font-size: 2.5rem; */
+    font-family: 'Julee', cursive;
+    text-align: center;
+}
+
+.desc div{
+    width: 40%;
+}
+
+
+
+.btn{
+    background: #D76A28 !important;
+    border-radius: 50px !important;
+    font-family: 'Julee', cursive !important;
+    width: 100% !important;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .desc div{
+        width: 80%;
+    }
+    
+  }

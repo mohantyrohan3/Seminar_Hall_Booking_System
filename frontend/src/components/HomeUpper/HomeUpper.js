@@ -2,10 +2,6 @@ import React from 'react'
 import "./HomeUpper.css"
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 
 export default function HomeUpper() {
   return (
@@ -34,9 +30,7 @@ export default function HomeUpper() {
       </Grid>
       </Box>
 
-    <div className='lower-div'>
-      Hello
-    </div>
+    
 
    </>
   )

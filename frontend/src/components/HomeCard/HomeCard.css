@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+
+
+.grid-card-home{
+    font-family: 'Julee', cursive !important;
+}
+
+
+
+.home-card{
+    background: linear-gradient(180deg, #15181D 0%, #2F3A40 100%);
+    margin-bottom: 2rem;
+}
+
+.text-card-home{
+    margin-top: 3rem !important;
+    color: white !important;
+    font-family: 'Julee', cursive !important;
+}
+
+.btn-card-home{
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 1rem;
+}
+
+
+.btn-home-card-btn{
+    background: #D76A28 !important;
+    border-radius: 50px !important;
+    font-family: 'Julee', cursive !important;
+    width: 30%;
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
+}

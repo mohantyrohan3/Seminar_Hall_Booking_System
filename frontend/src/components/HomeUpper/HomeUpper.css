@@ -4,7 +4,7 @@
     background: url("../../assets/HomePic.png");
     width: 100%;
     height: 70vh;
-    position: absolute;
+    /* position: absolute; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -46,12 +46,12 @@
 }
 
 
-
+/* 
 .lower-div{
     background: linear-gradient(267.51deg, #272F31 1.16%, #0D1017 98.8%);
     height: 100vh;
     width: 100%;
-}
+} */
 
 
 

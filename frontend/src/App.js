@@ -5,8 +5,10 @@ import HomeUpper from './components/HomeUpper/HomeUpper';
 function App() {
   return (
     <>
+    <div>
     <HomeUpper/>
     <HomeLower/>
+    </div>
     </>
   );
 }
