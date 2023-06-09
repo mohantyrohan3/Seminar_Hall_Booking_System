@@ -12,14 +12,35 @@ export default function AdminBooking() {
             <Appbar/>
             
 
-            <Grid container justifyContent={'center'} justifyItems={'center'}>
-
+            <Grid container justifyContent={'center'}>
                 <Grid item >
+                    <div className='admin-booking-title-div'>
                     <h2 className='admin-booking-title'>BOOKING REQUESTS</h2>
+                    </div>
                 </Grid>
             </Grid>
 
 
+
+            <Grid container spacing={5} justifyContent={'center'}> 
+                <Grid item xs={10}>
+                   <div className='request-div-admin'>
+                    
+                    </div> 
+                </Grid>
+
+                <Grid item xs={10}>
+                   <div className='request-div-admin'>
+                    
+                    </div> 
+                </Grid>
+
+                <Grid item xs={10}>
+                   <div className='request-div-admin'>
+                    
+                    </div> 
+                </Grid>
+            </Grid>
 
 
 
