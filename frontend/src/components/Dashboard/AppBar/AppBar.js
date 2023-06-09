@@ -12,10 +12,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['BOOKINGS', 'HALLS', 'DEPARTMENT'];
+const settings = ['Dashboard', 'Logout'];
 
 export default function Appbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,12 +39,15 @@ export default function Appbar() {
 
         // remove it later
         <div className="temp-back">
+
+
         <AppBar position="static" className="appbar">
+            
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
             <Typography
-              variant="h6"
+              className="text-appbar"
+              variant="h4"
               noWrap
               component="a"
               href="/"
@@ -53,13 +55,13 @@ export default function Appbar() {
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
                 fontFamily: 'monospace',
-                fontWeight: 700,
+                fontStyle: 'normal',
+                color:'white',
                 letterSpacing: '.3rem',
-                color: 'inherit',
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              ADMIN
             </Typography>
   
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -69,12 +71,14 @@ export default function Appbar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                color="black"
               >
                 <MenuIcon />
               </IconButton>
+
+
               <Menu
-                id="menu-appbar"
+                // id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
                   vertical: 'bottom',
@@ -89,21 +93,23 @@ export default function Appbar() {
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: 'block', md: 'none' },
+                  color:'black'
                 }}
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography textAlign="center" className="text-appbar">{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
-            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+
             <Typography
-              variant="h5"
+              variant="h6"
               noWrap
               component="a"
               href=""
+              className="text-appbar"
               sx={{
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },
@@ -115,14 +121,17 @@ export default function Appbar() {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              ADMIN
             </Typography>
+
+
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  sx={{ my: 2, color: 'black', display: 'block' , fontSize:'1.2rem', marginLeft:'2rem', fontWeight:'bold' }}
+                  className="text-appbar"
                 >
                   {page}
                 </Button>
@@ -131,12 +140,14 @@ export default function Appbar() {
   
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0}} >
+                  <Avatar alt="" src="" sx={{
+                    color:'black'
+                  }} />
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: '45px' }}
+                sx={{ mt: '45px' , color:'white' }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -153,7 +164,7 @@ export default function Appbar() {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Typography textAlign="center" className="text-appbar" sx={{color:'whitesmoke'}}>{setting}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
