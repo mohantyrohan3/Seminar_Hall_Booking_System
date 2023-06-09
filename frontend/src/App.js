@@ -1,9 +1,10 @@
 import './App.css';
+import AppBar from './components/Dashboard/AppBar/AppBar';
 // import AdminLogin from './components/AdminLogin/AdminLogin';
 // import HomeLower from './components/HomeLower/HomeLower';
 // import HomeUpper from './components/HomeUpper/HomeUpper';
 // import DepartmentLogin from './components/DepartmentLogin/DepartmentLogin';
-import DepartmentRegister from './components/DepartmentRegister/DepartmentRegister';
+// import DepartmentRegister from './components/DepartmentRegister/DepartmentRegister';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
     <HomeLower/> */}
     {/* <AdminLogin/> */}
     {/* <DepartmentLogin/> */}
-    <DepartmentRegister/>
+    {/* <DepartmentRegister/> */}
+    <AppBar/>
     </div>
     </>
   );
