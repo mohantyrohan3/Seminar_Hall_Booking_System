@@ -7,8 +7,7 @@
 }
 
 .appbar{
-    background: #D9D9D9 !important;
-    mix-blend-mode: overlay !important;
+    background: linear-gradient(270deg, #3B557F 0%, #34456B 100%);
     /* color: white !important; */
 }
 
@@ -16,6 +15,11 @@
 
 .text-appbar{
     /* color: #FFFFFF!important; */
-    color: black !important;
+    color: white !important;
+    font-family: 'Julee', cursive !important;
+}
+
+
+.dropdown-text{
     font-family: 'Julee', cursive !important;
 }

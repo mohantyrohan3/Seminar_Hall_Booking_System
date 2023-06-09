@@ -71,7 +71,9 @@ export default function Appbar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="black"
+                sx={{
+                  color:'white'
+                }}
               >
                 <MenuIcon />
               </IconButton>
@@ -93,12 +95,12 @@ export default function Appbar() {
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: 'block', md: 'none' },
-                  color:'black'
+                  color:'white'
                 }}
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" className="text-appbar">{page}</Typography>
+                    <Typography sx={{color:'black'}} className="dropdown-text" textAlign="center" >{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -163,8 +165,8 @@ export default function Appbar() {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center" className="text-appbar" sx={{color:'whitesmoke'}}>{setting}</Typography>
+                  <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{color:'black'}}>
+                    <Typography textAlign="center" className="dropdown-text"  sx={{color:'black'}}>{setting}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
