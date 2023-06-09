@@ -6,3 +6,18 @@
     box-sizing: border-box;
     overflow: auto;
 }
+
+
+.admin-booking-title{
+    color: white !important;
+    font-family: 'Julee', cursive !important;
+    font-size: 2rem;
+    text-align: center;
+    /* margin: 2rem !important; */
+}
+
+
+
+@media only screen and (max-width: 350px) {
+
+  }
