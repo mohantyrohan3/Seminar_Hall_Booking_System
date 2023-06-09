@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
 
-.department-login-body{
+
+.department-register-body{
     height: 100vh;
     width: 100vw;
     background: linear-gradient(243.18deg, #242C2C 0%, #11151A 100%);
@@ -9,13 +10,15 @@
 }
 
 
-.department-card{
+
+.department-register-card{
     background: #2B3539 !important;
     box-shadow: 0px 0px 9px 24px rgba(54, 52, 52, 0.14) !important;
     border-radius: 50px !important;
 }
 
-.department-card-title{
+
+.department-card-register-title{
     font-family: 'Julee', cursive !important;
     color: white;
     margin-left: 1rem !important;
@@ -24,8 +27,7 @@
 }
 
 
-
-.department-input {
+.department-register-input{
     background: #717171;
     border-radius: 30px !important;
     margin-bottom: 2rem;
@@ -33,10 +35,11 @@
     height: 3rem !important;
     font-family: 'Julee', cursive !important;
     font-size: large !important;
+    text-transform: capitalize !important;
 }
 
 
-.btn-department-card{
+.btn-department-register-card{
     background: #D76A28 !important;
     border-radius: 1rem !important;
     font-family: 'Julee', cursive !important;
@@ -46,8 +49,9 @@
 }
 
 
+
 @media only screen and (max-width: 300px) {
-    .department-card-title{
+    .department-card-register-title{
         font-size: larger !important;
     }
     
@@ -55,7 +59,7 @@
 
   
 @media only screen and (max-width: 190px) {
-    .department-card-title{
+    .department-card-register-title{
         font-size: small !important;
     }
     

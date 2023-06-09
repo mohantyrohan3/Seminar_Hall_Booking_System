@@ -2,7 +2,8 @@ import './App.css';
 // import AdminLogin from './components/AdminLogin/AdminLogin';
 // import HomeLower from './components/HomeLower/HomeLower';
 // import HomeUpper from './components/HomeUpper/HomeUpper';
-import DepartmentLogin from './components/DepartmentLogin/DepartmentLogin';
+// import DepartmentLogin from './components/DepartmentLogin/DepartmentLogin';
+import DepartmentRegister from './components/DepartmentRegister/DepartmentRegister';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
     {/* <HomeUpper/>
     <HomeLower/> */}
     {/* <AdminLogin/> */}
-    <DepartmentLogin/>
+    {/* <DepartmentLogin/> */}
+    <DepartmentRegister/>
     </div>
     </>
   );
