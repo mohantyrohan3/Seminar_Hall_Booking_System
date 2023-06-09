@@ -4,11 +4,14 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import HallCard from './HallCard';
 import { Container } from '@mui/material';
+import Appbar from '../AppBar/AppBar';
 
 
 export default function AdminHall() {
   return (
     <div className='admin-hall-body'>
+
+        <Appbar/>
         
         <Grid container spacing={2} justifyContent={'flex-end'}>
         <Grid item xs={11} sm={5} md={4} lg={4} xl={3} justifyItems={'flex-end'}>
@@ -18,7 +21,7 @@ export default function AdminHall() {
         </Grid>
       </Grid>
 
-      <Container>
+      <Container sx={{marginTop:'1rem', marginBottom:'1rem'}}>
       <Grid container spacing={10} justifyContent={'center'}>
         <Grid item xs={11} sm={7} md={5} lg={4} xl={4}>
           <HallCard/>

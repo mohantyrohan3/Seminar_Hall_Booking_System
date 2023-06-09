@@ -38,8 +38,8 @@ export default function Appbar() {
     return (
 
         // remove it later
-        <div className="temp-back">
-
+        // <div className="temp-back">
+      <>
 
         <AppBar position="static" className="appbar">
             
@@ -172,6 +172,7 @@ export default function Appbar() {
           </Toolbar>
         </Container>
       </AppBar>
-      </div>
+      </>
+      // </div>
     );
 }
