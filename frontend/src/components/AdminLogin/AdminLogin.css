@@ -20,6 +20,7 @@
     color: white;
     margin-left: 1rem !important;
     margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
 }
 
 
@@ -27,4 +28,18 @@
     background: #717171;
     border-radius: 30px !important;
     margin-bottom: 2rem;
+    color: white !important;
+    height: 3rem !important;
+    font-family: 'Julee', cursive !important;
+    font-size: large !important;
+}
+
+
+.btn-login-card{
+    background: #D76A28 !important;
+    border-radius: 1rem !important;
+    font-family: 'Julee', cursive !important;
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
 }
