@@ -1,0 +1,39 @@
+
+
+.admin-hall-body{
+    background: linear-gradient(243.81deg, #25354F 0.9%, #1B2033 100%);
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.btn-admin-hall{
+    background: #D76A28 !important;
+    border-radius: 1rem !important;
+    font-family: 'Julee', cursive !important;
+    width: 30%;
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
+    margin-top: 2rem !important;
+    justify-content: center;
+    /* margin-right: 1rem !important; */
+}
+
+.hall-admin-card{
+    background: linear-gradient(246.64deg, #4B84B7 0%, #1B2033 100%);
+    border-radius: 1.5rem !important;
+    box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+.hall-card-text{
+    font-family: 'Julee', cursive !important;
+    color:white !important;
+
+}
+
+.number-seat{
+    margin-left: 0.5rem;
+    font-size: 1.3rem;
+}
