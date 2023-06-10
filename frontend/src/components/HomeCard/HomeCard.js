@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import "./HomeCard.css"
+import { Link } from 'react-router-dom';
 
 
 export default function HomeCard() {
@@ -24,7 +25,9 @@ export default function HomeCard() {
                         </Typography>
                 </CardContent>
                 <CardActions className='btn-card-home'>
-                <Button size="medium" className='btn-home-card-btn'>LOGIN HERE</Button>
+                <Button size="medium" className='btn-home-card-btn'>
+                <Link to="/admin_login">LOGIN HERE</Link>
+                </Button>
                 </CardActions>
 
                 
@@ -44,7 +47,9 @@ export default function HomeCard() {
                         </Typography>
                 </CardContent>
                 <CardActions className='btn-card-home'>
-                <Button size="medium" className='btn-home-card-btn'>LOGIN HERE</Button>
+                <Button size="medium" className='btn-home-card-btn'>
+                <Link to="/department_login">LOGIN HERE</Link>
+                </Button>
                 </CardActions>
                 </Card>
                     

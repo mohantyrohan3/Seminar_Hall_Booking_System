@@ -1,4 +1,11 @@
 import './App.css';
+import React from "react";  
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+
 import AdminDepartment from './components/Dashboard/AdminDepartment/AdminDepartment';
 import AdminDepartmentRequest from './components/Dashboard/AdminDepartmentRequest/AdminDepartmentRequest';
 import DepartmentBooking from './components/Dashboard/DepartmentBooking/DepartmentBooking';
@@ -11,11 +18,35 @@ import HomeLower from './components/HomeLower/HomeLower';
 import HomeUpper from './components/HomeUpper/HomeUpper';
 import DepartmentLogin from './components/DepartmentLogin/DepartmentLogin';
 import DepartmentRegister from './components/DepartmentRegister/DepartmentRegister';
+import Loading from './components/Loading/Loading';
+import Home from './routes/Home';
+import AdminLoginRoute from './routes/AdminLoginRoute';
+import DepartmentLoginRoute from './routes/DepartmentLoginRoute';
 
 function App() {
   return (
     <>
-    <div>
+
+    <Router>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/admin_login" element={<AdminLoginRoute/>} />
+          <Route exact path="/department_login" element={<DepartmentLoginRoute/>} />
+
+          {/* <Route exact path="/shop" element={<Shop />} />
+          <Route exact path="/schemes" element={<Schemes />} />
+          <Route exact path="/helpdesk" element={<Helpdesk />} />
+          <Route exact path="/predict" element={<Predict />} />
+          <Route exact path="/predict/crop" element={<PredictCrop />} />
+          <Route exact path="/predict/loan" element={<Predictloan />} />
+          <Route exact path="/marketplace" element={<Homepage/>} />
+          <Route exact path="/review/cart" element={<CartReview/>} />
+          <Route exact path="/food/details/:keys" element={<CropDetails/>} /> */}
+         
+        </Routes>
+
+      </Router>
+   
 
     {/* <HomeUpper/>
     <HomeLower/> */}
@@ -29,8 +60,11 @@ function App() {
     {/* <AdminDepartment/> */}
     {/* <AdminDepartmentRequest/> */}
     {/* <DepartmentBooking/> */}
-    <DepartmentHistory/>
-    </div>
+    {/* <DepartmentHistory/> */}
+
+
+    {/* <Loading/> */}
+    
     </>
   );
 }

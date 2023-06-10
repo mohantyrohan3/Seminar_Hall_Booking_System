@@ -2,6 +2,7 @@ import React from 'react'
 import "./HomeUpper.css"
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 
 export default function HomeUpper() {
   return (
@@ -15,14 +16,13 @@ export default function HomeUpper() {
         <Grid item xs={12} sm={8} md={8} lg={7} xl={6}   className='navbar'>
           <div className='list-item'>
             <div className='list-item-children'>
-              HOME
+            <Link to="/">HOME</Link>
             </div>
             <div  className='list-item-children'>
-              ADMIN
+            <Link to="/admin_login">ADMIN</Link>
             </div>
-
             <div  className='list-item-children'>
-              DEPARTMENT
+            <Link to="/department_login">DEPARTMENT</Link>
             </div>
           </div>
 

@@ -1,0 +1,11 @@
+
+
+.loader{
+    background: linear-gradient(243.18deg, #242C2C 0%, #11151A 100%);
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
