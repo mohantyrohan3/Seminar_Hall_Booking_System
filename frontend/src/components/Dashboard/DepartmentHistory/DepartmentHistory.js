@@ -5,9 +5,10 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Container } from '@mui/material';
 
 
- 
+const pages = [1,2,3,4,5,6]; 
 
 
 
@@ -15,22 +16,11 @@ import Typography from '@mui/material/Typography';
 
 
 export default function DepartmentHistory() {
-  return (
-    <>
-
-        <div className='department-history-body'>
-            
-            <Appbar/>
 
 
-            <div className='department-history-title'>
-                YOUR BOOKINGS
-            </div>
-
-
-            <Grid container spacing={2} justifyContent={'center'}>
-
-                <Grid item xs={11} sm={7} md={5} lg={6} xl={6}>
+    const list = pages.map(()=>{
+        return(
+            <Grid sx={{marginBottom:'1.5rem'}} item xs={11} sm={7} md={8} lg={8} xl={8}>
                 <Card sx={{}} className='department-history-card'>
                             
                                 <Typography gutterBottom variant="h5" component="div" className='department-history-card-title'>
@@ -50,8 +40,31 @@ export default function DepartmentHistory() {
                                 </Grid>
 
                             </Card>
-                </Grid>
+                    </Grid>
+        )
+    })
+
+
+
+
+  return (
+    <>
+
+        <div className='department-history-body'>
+            
+            <Appbar/>
+
+
+            <div className='department-history-title'>
+                YOUR BOOKINGS
+            </div>
+
+
+                <Container>
+            <Grid container spacing={2} justifyContent={'center'}>
+                {list}   
             </Grid>
+                </Container>
 
             
 
