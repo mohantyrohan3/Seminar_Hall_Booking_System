@@ -6,3 +6,87 @@
     box-sizing: border-box;
     overflow: auto;
 }
+
+
+.admin-department-request-title{
+    color: white !important;
+    font-family: 'Julee', cursive !important;
+    font-size: 2rem;
+    text-align: center !important;
+    margin-top: 1rem;
+}
+
+
+
+.department-request-admin-card{
+    background: linear-gradient(246.64deg, #4B84B7 0%, #1B2033 100%) !important;
+}
+
+
+.department-admin-request-text{
+    color: white !important;
+    font-family: 'Julee', cursive !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-admin-booking-request-accept{
+    background: #28B006 !important;
+    border-radius: 1rem !important;
+    font-family: 'Julee', cursive !important;
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
+}
+
+
+.btn-admin-booking-request-reject{
+    background: #D72828 !important;
+    border-radius: 1rem !important;
+    font-family: 'Julee', cursive !important;
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
+    /* width: 50%; */
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 400px) {
+    .admin-department-request-title{
+        font-size: 1.4rem;
+    }
+  }
+
+
+  
+@media only screen and (max-width: 290px) {
+    .admin-department-request-title{
+        font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 200px) {
+    .admin-department-request-title{
+        font-size: 0.8rem;
+    }
+  }
