@@ -1,0 +1,59 @@
+
+
+.department-history-body{
+    background: linear-gradient(243.81deg, #25354F 0.9%, #1B2033 100%);
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+.department-history-title{
+    font-size: 2rem;
+    font-family: 'Julee', cursive !important;
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.department-history-card{
+    background: linear-gradient(264.79deg, #3A517C 0%, #314064 100%);
+}
+
+
+
+
+.department-history-card-title{
+    font-family: 'Julee', cursive !important;
+    color: white !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    margin-top: 1rem !important;
+}
+
+
+.department-history-event-name{
+    font-family: 'Julee', cursive !important;
+    color: white !important;
+}
+
+.btn-admin-booking-request-reject{
+    background: #D72828 !important;
+    border-radius: 1rem !important;
+    font-family: 'Julee', cursive !important;
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
+    /* width: 50%; */
+}
+
+
+
+
+@media only screen and (max-width: 400px) {
+    .department-history-title{
+        font-size: 1.4rem;
+    }
+  }

@@ -15,7 +15,7 @@ export default function DepartmentBooking() {
         return(
           <Grid item xs={11} sm={7} md={5} lg={4} xl={4}>
               <HallCard/>
-            </Grid>
+        </Grid>
         )
       })
 
@@ -32,9 +32,9 @@ export default function DepartmentBooking() {
             </div>
 
             <Container sx={{marginTop:'1rem', marginBottom:'1rem'}}>
-            <Grid container spacing={10} justifyContent={'center'}>
-                {list}
-            </Grid>
+                <Grid container spacing={10} justifyContent={'center'}>
+                    {list}
+                </Grid>
             </Container>
 
 
