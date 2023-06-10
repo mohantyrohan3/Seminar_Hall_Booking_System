@@ -22,6 +22,7 @@ import Loading from './components/Loading/Loading';
 import Home from './routes/Home';
 import AdminLoginRoute from './routes/AdminLoginRoute';
 import DepartmentLoginRoute from './routes/DepartmentLoginRoute';
+import DepartmentRegisterRoute from './routes/DepartmentRegisterRoute';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
           <Route exact path="/" element={<Home/>} />
           <Route exact path="/admin_login" element={<AdminLoginRoute/>} />
           <Route exact path="/department_login" element={<DepartmentLoginRoute/>} />
+          <Route exact path="/department_register" element={<DepartmentRegisterRoute/>} />
+
 
           {/* <Route exact path="/shop" element={<Shop />} />
           <Route exact path="/schemes" element={<Schemes />} />

@@ -11,6 +11,8 @@ import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
+import { Link } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 const handleSubmit = (e)=>{
@@ -84,6 +86,21 @@ export default function DepartmentLogin() {
 
                         <Grid item xs={8} sm={7} md={6} lg={6} xl={5}>
                          <Button size="medium" type='submit' className='btn-department-card' fullWidth>LOGIN HERE</Button>
+                        </Grid>
+
+                        <Grid item xs={8} sm={7} md={8} lg={8} xl={8}>
+                         <Button  size="medium" fullWidth sx={{color:"white"}} className='home-text'>
+                            <Link to='/'>
+                                <HomeIcon sx={{marginRight:'0.8rem'}}/>
+                                HOME</Link>
+                         </Button>
+                        </Grid>
+
+                        <Grid item xs={8} sm={7} md={8} lg={8} xl={8}>
+                         <Button  size="medium" fullWidth sx={{color:"white"}} className='home-text'>
+                            <Link to='/department_register'>
+                                REQUEST YOUR DEPARTMENT HERE</Link>
+                         </Button>
                         </Grid>
 
 

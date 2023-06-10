@@ -11,7 +11,8 @@ import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
-
+import HomeIcon from '@mui/icons-material/Home';
+import { Link } from 'react-router-dom';
 
 const handleSubmit = (e)=>{
     // e.preventDefault()
@@ -84,6 +85,15 @@ export default function AdminLogin() {
 
                         <Grid item xs={8} sm={7} md={6} lg={6} xl={5}>
                          <Button size="medium" type='submit' className='btn-login-card' fullWidth>LOGIN HERE</Button>
+                        </Grid>
+
+
+                        <Grid item xs={8} sm={7} md={8} lg={8} xl={8}>
+                         <Button  size="medium" fullWidth sx={{color:"white"}} className='home-text'>
+                            <Link to='/'>
+                                <HomeIcon sx={{marginRight:'0.8rem'}}/>
+                                HOME</Link>
+                         </Button>
                         </Grid>
 
 
