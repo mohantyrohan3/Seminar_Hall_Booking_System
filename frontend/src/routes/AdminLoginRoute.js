@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AdminLogin from '../components/AdminLogin/AdminLogin'
 import Loading from '../components/Loading/Loading';
+import { Slide } from "react-awesome-reveal";
 
 export default function AdminLoginRoute() {
 
@@ -25,7 +26,7 @@ useEffect(() => {
             ):
             (   
                 <>
-                <AdminLogin/>
+               <AdminLogin/>
                 </>
             )
         }

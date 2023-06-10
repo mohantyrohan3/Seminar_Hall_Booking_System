@@ -13,6 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
+import { Slide } from "react-awesome-reveal";
 
 const handleSubmit = (e)=>{
     // e.preventDefault()
@@ -23,6 +24,7 @@ const handleSubmit = (e)=>{
 export default function AdminLogin() {
   return (
    <>
+        
     <div className='admin-login-body'>
 
     <Grid container spacing={2} style={{height:'100%'}} alignContent={'center'} justifyContent={'center'}>
@@ -116,6 +118,7 @@ export default function AdminLogin() {
         </Grid>
       </Grid>
     </div>
+        
     
    </>
   )

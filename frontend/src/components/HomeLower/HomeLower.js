@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import HomeCard from '../HomeCard/HomeCard';
 import HomeFooter from '../HomeFooter/HomeFooter';
 import { Link } from 'react-router-dom';
+import { Slide } from "react-awesome-reveal";
 
 export default function HomeLower() {
   return (
@@ -13,7 +14,9 @@ export default function HomeLower() {
        
         <div className='title'>
             <div>
-                SEMINAR HALL BOOKING   
+              <Slide>
+                SEMINAR HALL BOOKING
+              </Slide>
             </div>
 
         </div>
@@ -34,6 +37,7 @@ export default function HomeLower() {
 
          
         <Grid container spacing={2} justifyContent={'center'} >
+         
         <Grid item justifyContent={'center'} alignItems={'center'}>
                 <Button size='large' variant="contained" className='btn' disableElevation>
                 <Link to="/department_login">BOOK NOW</Link>
@@ -43,7 +47,11 @@ export default function HomeLower() {
 
       <br />
         <br />
+
+        <Slide>
         <HomeCard/>
+        </Slide>
+
         <br/>
         <br/>
 
