@@ -1,0 +1,54 @@
+
+
+.admin-department-body{
+    background: linear-gradient(243.81deg, #25354F 0.9%, #1B2033 100%);
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+.admin-department-title{
+    color: white !important;
+    font-family: 'Julee', cursive !important;
+    font-size: 2rem;
+    text-align: center !important;
+    margin-top: 1rem;
+    
+}
+
+.admin-department-title-div{
+    border-bottom: 1px solid #FFFFFF;
+    margin-bottom: 2rem;
+}
+
+
+.btn-admin-department{
+    background: #D76A28 !important;
+    border-radius: 1rem !important;
+    font-family: 'Julee', cursive !important;
+    /* width: 80%; */
+    color: white !important;
+    font-size: large;
+    margin-bottom: 1rem !important;
+    margin-top: 1.7rem !important;
+    justify-content: center;
+    /* margin-left: 1rem !important; */
+    /* margin-right: 1rem !important; */
+}
+
+
+
+
+@media only screen and (max-width: 390px) {
+    .admin-department-title{
+        font-size: 1.5rem;
+    }
+  }
+
+
+  @media only screen and (max-width: 200px) {
+    .admin-department-title{
+        font-size: 1rem;
+    }
+  }

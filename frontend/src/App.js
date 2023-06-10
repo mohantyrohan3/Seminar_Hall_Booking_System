@@ -1,5 +1,6 @@
 import './App.css';
-import AdminBooking from './components/Dashboard/AdminBooking/AdminBooking';
+import AdminDepartment from './components/Dashboard/AdminDepartment/AdminDepartment';
+// import AdminBooking from './components/Dashboard/AdminBooking/AdminBooking';
 // import AdminHall from './components/Dashboard/AdminHall/AdminHall';
 // import AppBar from './components/Dashboard/AppBar/AppBar';
 // import AdminLogin from './components/AdminLogin/AdminLogin';
@@ -19,7 +20,8 @@ function App() {
     {/* <DepartmentRegister/> */}
     {/* <AppBar/> */}
     {/* <AdminHall/> */}
-    <AdminBooking/>
+    {/* <AdminBooking/> */}
+    <AdminDepartment/>
     </div>
     </>
   );
