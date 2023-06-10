@@ -1,6 +1,7 @@
 import './App.css';
 // import AdminDepartment from './components/Dashboard/AdminDepartment/AdminDepartment';
-import AdminDepartmentRequest from './components/Dashboard/AdminDepartmentRequest/AdminDepartmentRequest';
+// import AdminDepartmentRequest from './components/Dashboard/AdminDepartmentRequest/AdminDepartmentRequest';
+import DepartmentBooking from './components/Dashboard/DepartmentBooking/DepartmentBooking';
 // import AdminBooking from './components/Dashboard/AdminBooking/AdminBooking';
 // import AdminHall from './components/Dashboard/AdminHall/AdminHall';
 // import AppBar from './components/Dashboard/AppBar/AppBar';
@@ -23,7 +24,8 @@ function App() {
     {/* <AdminHall/> */}
     {/* <AdminBooking/> */}
     {/* <AdminDepartment/> */}
-    <AdminDepartmentRequest/>
+    {/* <AdminDepartmentRequest/> */}
+    <DepartmentBooking/>
     </div>
     </>
   );
