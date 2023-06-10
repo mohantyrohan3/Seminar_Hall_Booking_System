@@ -34,7 +34,7 @@ export default function DepartmentHistory() {
                                     </Grid>
 
                                     <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-                                    <Button className='btn-admin-booking-request-reject' fullWidth size="medium">CANCEL</Button>
+                                    <Button className='btn-department-history-reject' fullWidth size="medium">CANCEL</Button>
                                     </Grid>
 
                                 </Grid>

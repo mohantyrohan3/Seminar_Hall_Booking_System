@@ -59,6 +59,7 @@
     color: white !important;
     font-size: large;
     margin-bottom: 1rem !important;
+    width: 50%;
 }
 
 .btn-admin-booking-request-reject{
@@ -80,6 +81,6 @@
         font-size: 1.5rem;
     }
     .admin-booking-request-desc-div{
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
   }
