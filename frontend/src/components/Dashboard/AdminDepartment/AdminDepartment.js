@@ -6,9 +6,10 @@ import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Person2Icon from '@mui/icons-material/Person2';
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function AdminDepartment() {
   return (
@@ -35,9 +36,33 @@ export default function AdminDepartment() {
 
             <Container>
             <Grid container spacing={2}>
-                    <Grid item xs={8}>
-                        h
+
+                    <Grid item xs={4}>
+                    <Card sx={{}} className='admin-department-card'>
+                            <CardActionArea>
+                                <CardContent>
+
+                                <Typography gutterBottom variant="h5" className='admin-department-text' component="div">
+                                    DEPARTMENT NAME
+                                </Typography>
+                                <br/>
+                                <Typography variant="body2"className='admin-department-text'>
+                                    <Person2Icon sx={{marginRight:"1rem"}}/>
+                                    HEAD OF THE DEPARTMENT
+                                </Typography>
+                                <br/>
+                                
+                                <Typography variant="body2"className='admin-department-text'>
+                                    <EmailIcon sx={{marginRight:"1rem"}}/>
+                                        EMAIL
+                                </Typography>                               
+                                
+                                </CardContent>
+                            </CardActionArea>
+                     </Card>
                     </Grid>
+
+
             </Grid>
             </Container>
 

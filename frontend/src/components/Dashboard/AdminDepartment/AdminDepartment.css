@@ -37,6 +37,18 @@
     /* margin-right: 1rem !important; */
 }
 
+.admin-department-card{
+    background: #334266 !important;
+    border-radius: 1rem !important;
+    box-shadow: 0px 0px 34px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+.admin-department-text{
+    font-family: 'Julee', cursive !important;
+    color: white;
+}
+
 
 
 
