@@ -24,7 +24,7 @@ function App() {
 
   
   useEffect(() => {
-    axios.get('https://seminar.post.rohankm.online/details', {
+    axios.get('http://localhost:8000/details', {
       withCredentials: true
           })
           .then(function (response) {
