@@ -34,7 +34,7 @@ router.post('/create_admin',(req,res)=>{
 
 
 // Admin Login Route
-router.post('/admin_login', adminPassport.authenticate('admin', { failureRedirect: '/failed' }), (req,res)=>{
+router.post('/admin_login', adminPassport.authenticate('admin', { failureRedirect: '/api/failed' }), (req,res)=>{
     res.send({
         msg:'Successfully Logged In',
         admin:req.user
@@ -44,7 +44,7 @@ router.post('/admin_login', adminPassport.authenticate('admin', { failureRedirec
 
 
 // Department Login Route
-router.post('/department_login',departmentPassport.authenticate('department', { failureRedirect: '/failed' }),(req,res)=>{
+router.post('/department_login',departmentPassport.authenticate('department', { failureRedirect: '/api/failed' }),(req,res)=>{
   res.send({
     msg:'Successfully Logged In',
     department:req.user
@@ -144,6 +144,7 @@ router.get('/failed',(req,res)=>{
     res.send({
         'error':'Error in Logging In'
     })
+    // res.redirect('/admin_login')
 })
 
 
