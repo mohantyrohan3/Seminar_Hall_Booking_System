@@ -12,11 +12,11 @@ const cors = require('cors')
 app.use(express.json());
 app.use(express.urlencoded());
 
-// const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online/"];
 
 
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:allowedOrigins, 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
