@@ -13,7 +13,7 @@ export const adminloginApi = async (inputData) => {
 
 
     let response = await axios(options);
-    return response.data
+    return response
 
 
   } catch (error) {

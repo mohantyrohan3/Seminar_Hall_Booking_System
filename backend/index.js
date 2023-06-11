@@ -21,9 +21,9 @@ app.use(session({
     saveUninitialized: true,
     cookie: { maxAge:1000*60*60*24 },
     store: MongoStore.create({ mongoUrl: `mongodb+srv://mohantyrohan:${details.MONGO_Password}@cluster0.llzjwsh.mongodb.net/seminar_hall_DB?retryWrites=true&w=majority`,collectionName:"sessions" }),
-    cookie: {
-        domain: 'localhost',
-    }
+    // cookie: {
+    //     domain: 'localhost',
+    // }
   }))
 
 
