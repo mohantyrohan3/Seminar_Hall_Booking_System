@@ -8,6 +8,7 @@ const adminPassport = require('./config/passport');
 const departmentPassport = require('./config/department_passport');
 const details = require('./routes/constants');
 const cors = require('cors')
+const path = require('path');
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -49,6 +50,17 @@ app.use(departmentPassport.session())
 
 
 app.use('/api',require('./routes/index'));
+
+
+
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
+// Any other routes should be handled by the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+});
+
+
 
 
 
