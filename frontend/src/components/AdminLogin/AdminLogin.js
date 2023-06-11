@@ -13,7 +13,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
-import { Slide } from "react-awesome-reveal";
 
 const handleSubmit = (e)=>{
     // e.preventDefault()

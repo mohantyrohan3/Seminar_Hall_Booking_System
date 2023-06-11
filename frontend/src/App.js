@@ -23,6 +23,8 @@ import Home from './routes/Home';
 import AdminLoginRoute from './routes/AdminLoginRoute';
 import DepartmentLoginRoute from './routes/DepartmentLoginRoute';
 import DepartmentRegisterRoute from './routes/DepartmentRegisterRoute';
+import AdminHallRoute from './routes/AdminHallRoute';
+import AdminBookingRoute from './routes/AdminBookingRoute';
 
 function App() {
   return (
@@ -34,7 +36,9 @@ function App() {
           <Route exact path="/admin_login" element={<AdminLoginRoute/>} />
           <Route exact path="/department_login" element={<DepartmentLoginRoute/>} />
           <Route exact path="/department_register" element={<DepartmentRegisterRoute/>} />
-
+          <Route exact path="/admin/hall" element={<AdminHallRoute/>} />
+          <Route exact path="/admin/booking" element={<AdminBookingRoute/>} />
+          
 
           {/* <Route exact path="/shop" element={<Shop />} />
           <Route exact path="/schemes" element={<Schemes />} />

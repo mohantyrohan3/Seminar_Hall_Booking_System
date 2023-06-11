@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import AdminLogin from '../components/AdminLogin/AdminLogin'
 import Loading from '../components/Loading/Loading';
+import AdminHall from '../components/Dashboard/AdminHall/AdminHall';
 
-export default function AdminLoginRoute() {
+export default function AdminHallRoute() {
 
 const [loading, setLoading] = useState(true);
+
 
 useEffect(() => {
     
@@ -17,19 +18,22 @@ useEffect(() => {
 }, []);
 
 
+
+
   return (
     <>
-         {
+        {
             loading?(
                 <Loading/>
             ):
             (   
                 <>
-               <AdminLogin/>
+                    <AdminHall/>
                 </>
             )
         }
-
+    
+    
     </>
   )
 }
