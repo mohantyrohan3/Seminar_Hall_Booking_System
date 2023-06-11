@@ -20,7 +20,19 @@ const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online/
 //     credentials:true,            //access-control-allow-credentials:true
 //     optionSuccessStatus:200
 // }
-app.use(cors());
+
+
+var whitelist = ['http://localhost:3000', 'https://seminar.rohankm.online']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions));
 
 
 
