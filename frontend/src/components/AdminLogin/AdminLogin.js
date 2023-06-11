@@ -50,6 +50,7 @@ export default function AdminLogin() {
         console.log(response)
         // navigate("/admin/hall");
         axios.get('https://seminar.post.rohankm.online/details', {
+            withCredentials: true
           })
           .then(function (response) {
             console.log(response)

@@ -8,6 +8,7 @@ export const adminloginApi = async (inputData) => {
         headers: {
           'content-type': 'application/json',
         },
+        withCredentials: true,
         data:inputData
     };
 

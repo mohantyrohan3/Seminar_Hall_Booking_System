@@ -25,6 +25,7 @@ function App() {
   
   useEffect(() => {
     axios.get('https://seminar.post.rohankm.online/details', {
+      withCredentials: true
           })
           .then(function (response) {
             if(response.data.status === 'Authenticated'){
