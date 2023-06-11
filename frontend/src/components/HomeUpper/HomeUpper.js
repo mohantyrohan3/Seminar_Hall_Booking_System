@@ -14,7 +14,7 @@ export default function HomeUpper() {
     <Box>
     <Grid container justifyContent={'center'}>
         <Grid item xs={11} sm={8} md={8} lg={7} xl={6}   className='navbar'>
-          <div className='list-item'>
+          <div className='list-item' style={{display:'flex'}}>
             <div className='list-item-children'>
             <Link to="/">HOME</Link>
             </div>
