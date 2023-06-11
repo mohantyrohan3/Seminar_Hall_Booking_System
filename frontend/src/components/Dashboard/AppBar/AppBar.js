@@ -12,9 +12,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom";
 
-const pages = ['BOOKINGS', 'HALLS', 'DEPARTMENT'];
-const settings = ['Dashboard', 'Logout'];
+const pages = ['BOOKINGS', 'DEPARTMENT','REQUESTS'];
+const settings = ['LOGOUT'];
 
 export default function Appbar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -45,12 +46,13 @@ export default function Appbar() {
             
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+
+            <Link to="/admin/hall">
             <Typography
               className="text-appbar"
               variant="h4"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
@@ -63,6 +65,7 @@ export default function Appbar() {
             >
               ADMIN
             </Typography>
+            </Link>
   
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -98,14 +101,29 @@ export default function Appbar() {
                   color:'white'
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography sx={{color:'black'}} className="dropdown-text" textAlign="center" >{page}</Typography>
+                  <MenuItem  onClick={handleCloseNavMenu}>
+                    <Link to='/admin/booking'>
+                    <Typography sx={{color:'black'}} className="dropdown-text" textAlign="center" >BOOKINGS</Typography>
+                    </Link>
                   </MenuItem>
-                ))}
+
+                  <MenuItem  onClick={handleCloseNavMenu}>
+                    <Link to='/admin/department'>
+                    <Typography sx={{color:'black'}} className="dropdown-text" textAlign="center" >DEPARTMENT</Typography>
+                    </Link>
+                  </MenuItem>
+
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Link to="/admin/department/request">
+                    <Typography sx={{color:'black'}} className="dropdown-text" textAlign="center" >REQUESTS</Typography>
+                    </Link>
+                  </MenuItem>
+                
               </Menu>
             </Box>
 
+
+            
             <Typography
               variant="h6"
               noWrap
@@ -123,21 +141,52 @@ export default function Appbar() {
                 textDecoration: 'none',
               }}
             >
+              <Link to="/admin/hall">
               ADMIN
+             </Link>
             </Typography>
 
 
+
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
+
+            <Link to='/admin/booking'>
+            <Button
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'black', display: 'block' , fontSize:'1.2rem', marginLeft:'2rem', fontWeight:'bold' }}
                   className="text-appbar"
                 >
-                  {page}
+                  BOOKINGS
                 </Button>
-              ))}
+            </Link>
+
+
+
+              <Link to='/admin/department'>
+                <Button
+                
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'black', display: 'block' , fontSize:'1.2rem', marginLeft:'2rem', fontWeight:'bold' }}
+                  className="text-appbar"
+                >
+                  DEPARTMENT
+                </Button>
+               </Link>
+
+
+
+               <Link to="/admin/department/request">
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'black', display: 'block' , fontSize:'1.2rem', marginLeft:'2rem', fontWeight:'bold' }}
+                  className="text-appbar"
+                >
+                  REQUESTS
+                </Button>
+                </Link>
+
+
+
             </Box>
   
             <Box sx={{ flexGrow: 0 }}>

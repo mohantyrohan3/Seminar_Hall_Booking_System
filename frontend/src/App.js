@@ -25,6 +25,10 @@ import DepartmentLoginRoute from './routes/DepartmentLoginRoute';
 import DepartmentRegisterRoute from './routes/DepartmentRegisterRoute';
 import AdminHallRoute from './routes/AdminHallRoute';
 import AdminBookingRoute from './routes/AdminBookingRoute';
+import AdminDepartmentRoute from './routes/AdminDepartmentRoute';
+import AdminDepartmentRequestRoute from './routes/AdminDepartmentRequestRoute';
+import DepartmentBookingRoute from './routes/DepartmentBookingRoute';
+import DepartmentHistoryRoute from './routes/DepartmentHistoryRoute';
 
 function App() {
   return (
@@ -36,20 +40,19 @@ function App() {
           <Route exact path="/admin_login" element={<AdminLoginRoute/>} />
           <Route exact path="/department_login" element={<DepartmentLoginRoute/>} />
           <Route exact path="/department_register" element={<DepartmentRegisterRoute/>} />
+
+
           <Route exact path="/admin/hall" element={<AdminHallRoute/>} />
           <Route exact path="/admin/booking" element={<AdminBookingRoute/>} />
-          
+          <Route exact path="/admin/department" element={<AdminDepartmentRoute/>} />
+          <Route exact path="/admin/department/request" element={<AdminDepartmentRequestRoute/>} />
 
-          {/* <Route exact path="/shop" element={<Shop />} />
-          <Route exact path="/schemes" element={<Schemes />} />
-          <Route exact path="/helpdesk" element={<Helpdesk />} />
-          <Route exact path="/predict" element={<Predict />} />
-          <Route exact path="/predict/crop" element={<PredictCrop />} />
-          <Route exact path="/predict/loan" element={<Predictloan />} />
-          <Route exact path="/marketplace" element={<Homepage/>} />
-          <Route exact path="/review/cart" element={<CartReview/>} />
-          <Route exact path="/food/details/:keys" element={<CropDetails/>} /> */}
-         
+          
+          <Route exact path="/department/booking" element={<DepartmentBookingRoute/>} />
+          <Route exact path="/department/booking/history" element={<DepartmentHistoryRoute/>} />
+
+
+
         </Routes>
 
       </Router>
