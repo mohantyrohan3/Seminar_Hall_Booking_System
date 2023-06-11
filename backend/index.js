@@ -7,10 +7,11 @@ const MongoStore = require('connect-mongo');
 const adminPassport = require('./config/passport');
 const departmentPassport = require('./config/department_passport');
 const details = require('./routes/constants');
+const cors = require('cors')
 
 app.use(express.json());
 app.use(express.urlencoded());
-
+app.use(cors())
 
 
 

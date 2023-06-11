@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./AdminLogin.css"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,6 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const handleSubmit = (e)=>{
     // e.preventDefault()
@@ -21,6 +22,22 @@ const handleSubmit = (e)=>{
 
 
 export default function AdminLogin() {
+
+
+    useEffect(() => {
+        axios.get('https://seminar.post.rohankm.online/', {
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+    },);
+
+
+
+
   return (
    <>
         
