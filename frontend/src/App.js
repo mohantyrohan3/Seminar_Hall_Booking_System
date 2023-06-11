@@ -24,7 +24,7 @@ function App() {
 
   
   useEffect(() => {
-    axios.get('https://seminar.rohankm.online/api/details', {
+    axios.get('/api/details', {
       withCredentials: true
           })
           .then(function (response) {
