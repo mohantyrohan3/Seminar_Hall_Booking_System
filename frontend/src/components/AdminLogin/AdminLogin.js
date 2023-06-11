@@ -44,7 +44,7 @@ export default function AdminLogin() {
         }
        const response = await adminloginApi(data);
        if(response.error){
-        navigate("/admin_login");
+        navigate("https://seminar.rohankm.online/admin_login");
        }
        else{
         console.log(response)

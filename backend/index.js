@@ -36,7 +36,7 @@ app.use(session({
     secret: 'rkm seminar',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge:1000*60*60*24, sameSite:'none',secure:true},
+    cookie: { maxAge:1000*60*60*24, sameSite:'strict',secure:true},
     store: MongoStore.create({ mongoUrl: `mongodb+srv://mohantyrohan:${details.MONGO_Password}@cluster0.llzjwsh.mongodb.net/seminar_hall_DB?retryWrites=true&w=majority`,collectionName:"sessions" }),
   }))
 
