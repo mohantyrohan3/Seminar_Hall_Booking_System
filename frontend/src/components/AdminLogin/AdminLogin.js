@@ -49,7 +49,7 @@ export default function AdminLogin() {
        else{
         console.log(response)
         // navigate("/admin/hall");
-        axios.get('https://seminar.post.rohankm.online/details', {
+        axios.get('https://seminar.rohankm.online/api/details', {
             withCredentials: true
           })
           .then(function (response) {

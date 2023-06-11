@@ -4,7 +4,7 @@ export const adminloginApi = async (inputData) => {
   try {
     const options = {
         method: 'POST',
-        url: 'https://seminar.post.rohankm.online/admin_login',
+        url: 'https://seminar.rohankm.online/api/admin_login',
         headers: {
           'content-type': 'application/json',
         },
