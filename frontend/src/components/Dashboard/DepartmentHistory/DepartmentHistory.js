@@ -1,11 +1,11 @@
 import React from 'react'
 import "./DepartmentHistory.css"
-import Appbar from "../AppBar/AppBar"
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
+import DepartmentAppBar from '../DepartmentAppBar/DepartmentAppBar';
 
 
 const pages = [1,2,3,4,5,6]; 
@@ -52,7 +52,7 @@ export default function DepartmentHistory() {
 
         <div className='department-history-body'>
             
-            <Appbar/>
+            <DepartmentAppBar/>
 
 
             <div className='department-history-title'>

@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from "react-router-dom";
 
-const pages = ['BOOKINGS', 'DEPARTMENT','REQUESTS'];
+
 const settings = ['LOGOUT'];
 
 export default function Appbar() {

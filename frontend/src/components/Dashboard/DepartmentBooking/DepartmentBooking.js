@@ -1,9 +1,9 @@
 import React from 'react'
 import "./DepartmentBooking.css"
-import Appbar from "../AppBar/AppBar"
 import Grid from '@mui/material/Grid';
 import HallCard from '../AdminHall/HallCard';
 import { Container } from '@mui/material';
+import DepartmentAppBar from '../DepartmentAppBar/DepartmentAppBar';
 
 
 
@@ -25,7 +25,7 @@ export default function DepartmentBooking() {
     <>
         <div className='department-booking-body'>
 
-            <Appbar/>
+            <DepartmentAppBar/>
 
             <div className='department-booking-title'>
                 HALLS
