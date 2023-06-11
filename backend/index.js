@@ -12,7 +12,7 @@ const cors = require('cors')
 app.use(express.json());
 app.use(express.urlencoded());
 
-const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online/"];
+const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online"];
 
 
 // const corsOptions ={
@@ -24,13 +24,7 @@ const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online/
 
 var whitelist = ['http://localhost:3000', 'https://seminar.rohankm.online']
 var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  },
+  origin:allowedOrigins,
   credentials:true
 }
 app.use(cors(corsOptions));
