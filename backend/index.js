@@ -22,9 +22,9 @@ const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online"
 // }
 
 
-var whitelist = ['http://localhost:3000', 'https://seminar.rohankm.online']
-var corsOptions = {
-  origin:allowedOrigins,
+const whitelist = ['http://localhost:3000', 'https://seminar.rohankm.online']
+const corsOptions = {
+  origin:whitelist,
   credentials:true
 }
 app.use(cors(corsOptions));
