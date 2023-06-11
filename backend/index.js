@@ -52,12 +52,12 @@ app.use(departmentPassport.session())
 app.use('/api',require('./routes/index'));
 
 
-
-app.use(express.static(path.join(__dirname, 'frontend/build')));
-
+const rootPath = __dirname.substring(0, __dirname.length - 8);
+// app.use(express.static(""));
+app.use(express.static(rootPath + '/frontend/build'));
 // Any other routes should be handled by the React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+  res.sendFile(rootPath + '/frontend/build/index.html');
 });
 
 
