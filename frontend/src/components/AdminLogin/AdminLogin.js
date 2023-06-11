@@ -43,26 +43,26 @@ export default function AdminLogin() {
             password:password
         }
        const response = await adminloginApi(data);
-       console.log(response)
-    //    if(!response.data.error){
-    //        console.log(response.data.error)
-    //        // navigate("/admin/hall");
-    //        axios.get('https://seminar.rohankm.online/api/details', {
-    //            withCredentials: true
-    //          })
-    //          .then(function (response) {
-    //            console.log(response)
-    //          })
-    //          .catch(function (error) {
-    //            console.log(error);
-    //          })
-    //       }
+       console.log(response.data)
+       if(!response.data.error){
+           console.log(response.data.error)
+           navigate("/admin/hall");
+           axios.get('https://seminar.rohankm.online/api/details', {
+               withCredentials: true
+             })
+             .then(function (response) {
+               console.log(response)
+             })
+             .catch(function (error) {
+               console.log(error);
+             })
+          }
 
 
-    //     else{
-    //        console.log(response.data)
-    //        navigate("/");
-    //     }
+        else{
+           console.log(response.data)
+           navigate("/");
+        }
     }
 
 
