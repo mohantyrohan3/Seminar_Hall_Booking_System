@@ -15,12 +15,12 @@ app.use(express.urlencoded());
 const allowedOrigins = ['http://localhost:3000',"https://seminar.rohankm.online/"];
 
 
-const corsOptions ={
-    origin:allowedOrigins, 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+// const corsOptions ={
+//     origin:allowedOrigins, 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+app.use(cors());
 
 
 
