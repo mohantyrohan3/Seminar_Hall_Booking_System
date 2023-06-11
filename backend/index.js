@@ -12,13 +12,15 @@ const cors = require('cors')
 app.use(express.json());
 app.use(express.urlencoded());
 
-const allowedOrigins = ['http://localhost:3000'];
+// const allowedOrigins = ['http://localhost:3000'];
 
 
-app.use(cors({
-    origin:allowedOrigins,
-    credentials: true
-}))
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 
 
@@ -26,7 +28,7 @@ app.use(session({
     secret: 'rkm seminar',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge:1000*60*60*24,sameSite: 'none'},
+    cookie: { maxAge:1000*60*60*24,sameSite: 'strict'},
     store: MongoStore.create({ mongoUrl: `mongodb+srv://mohantyrohan:${details.MONGO_Password}@cluster0.llzjwsh.mongodb.net/seminar_hall_DB?retryWrites=true&w=majority`,collectionName:"sessions" }),
     // cookie: {
     //     domain: 'localhost',
