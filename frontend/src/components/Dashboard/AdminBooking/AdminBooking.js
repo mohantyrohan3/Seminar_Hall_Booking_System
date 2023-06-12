@@ -26,7 +26,6 @@ export default function AdminBooking() {
           const response = await axios.get('https://seminar.rohankm.online/api/booking/show_booking_requests',{
             withCredentials:true
           })
-          console.log(response)
           let temp = response.data.booking_requests.map((data)=>{
             return(
              <AdminBookingCard data = {data} getrequest={get_booking_requests}/>
