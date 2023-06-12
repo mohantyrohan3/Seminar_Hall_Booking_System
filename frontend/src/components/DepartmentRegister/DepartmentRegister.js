@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./DepartmentRegister.css"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -12,15 +12,80 @@ import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import SchoolIcon from '@mui/icons-material/School';
 import PersonIcon from '@mui/icons-material/Person';
-
-const handleSubmit = (e)=>{
-    // e.preventDefault()
-    console.log('Hello')
-}
+import {departmentRegisterApi} from "../../api/departmentregisterapi"
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
 export default function DepartmentRegister() {
+
+    const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+
+    
+    const [email, setEmail] = useState("");
+    const [department, setDepartment] = useState("");
+    const [head, setHead] = useState("");
+
+    const handleEmail = (e)=>{
+        setEmail(e.target.value)
+    }
+    const handleDepartment = (e)=>{
+        setDepartment(e.target.value)
+    }
+    const handleHead = (e)=>{
+        setHead(e.target.value)
+    }
+
+
+
+
+
+
+
+
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault()
+        const data = {
+            email:email,
+            department:department,
+            head:head
+        }
+        const response = await departmentRegisterApi(data);
+       console.log(response.data)
+       if(!response.data.error){
+            console.log(response.data)
+           setEmail("")
+           setDepartment("")
+           setHead("")
+           setOpen(true)
+          }
+        else{
+           console.log(response.data)
+        }
+    }
+
+
+
+
   return (
-    <>
+    <>  
+
+        <Snackbar vertical= 'top'
+          horizontal= 'right' open={open} autoHideDuration={3000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' , background:'#388e3c' ,color:'white'}}>
+            Department Request Made
+            </Alert>
+        </Snackbar>
         <div className='department-register-body'>
 
         <Grid container spacing={2} style={{height:'100%'}} alignContent={'center'} justifyContent={'center'}>
@@ -45,6 +110,8 @@ export default function DepartmentRegister() {
 
                                 <FormControl fullWidth> 
                                      <Input
+                                     value={email}
+                                     onChange={handleEmail}
                                      disableUnderline={true}
                                      type='email'
                                      placeholder="Email"
@@ -68,6 +135,8 @@ export default function DepartmentRegister() {
 
                                 <FormControl fullWidth> 
                                      <Input
+                                      value={department}
+                                      onChange={handleDepartment}
                                      disableUnderline={true}
                                      type='text'
                                      placeholder="Write your Department"
@@ -87,7 +156,9 @@ export default function DepartmentRegister() {
                         <Grid item xs={11} sm={9} md={8} lg={9} xl={9}>
 
                         <FormControl  fullWidth error>
-                            <Input
+                            <Input  
+                                    value={head}
+                                    onChange={handleHead}
                                     type='text'
                                     placeholder="Head of the Department"
                                     required={true}

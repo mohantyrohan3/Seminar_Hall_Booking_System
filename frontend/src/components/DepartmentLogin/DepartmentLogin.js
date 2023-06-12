@@ -16,9 +16,23 @@ import HomeIcon from '@mui/icons-material/Home';
 import {departmentLoginApi} from "../../api/departmentloginapi"
 import { useDispatch } from 'react-redux';
 import { addStatus } from '../../store/slices/userSlice';
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
+
+
 
 
 export default function DepartmentLogin() {
+
+    const [open, setOpen] = useState(false);
+  
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpen(false);
+    };
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -46,14 +60,14 @@ export default function DepartmentLogin() {
             password:password
         }
         const response = await departmentLoginApi(data);
-       console.log(response.data)
        if(!response.data.error){
            dispatch(addStatus("Admin"))
            navigate("/department/booking")
           }
         else{
-           console.log(response.data)
-           navigate("/");
+            setOpen(true)
+            // setEmail('')
+            setPassword('')
         }
     }
 
@@ -62,6 +76,14 @@ export default function DepartmentLogin() {
 
   return (
     <>
+
+        <Snackbar vertical= 'top'
+          horizontal= 'right' open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} style={{background:'#d32f2f',color:'white'}} severity="warning">Incorrect Username/Password</Alert>        
+        </Snackbar>
+
+
+
     <div className='department-login-body'>
 
 

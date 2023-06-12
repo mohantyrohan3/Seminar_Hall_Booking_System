@@ -16,13 +16,24 @@ import { Link, useNavigate } from 'react-router-dom';
 import { adminloginApi } from '../../api/adminloginapi';
 import { addStatus } from '../../store/slices/userSlice';
 import { useDispatch } from 'react-redux';
-
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
 
 
 
 
 export default function AdminLogin() {
+
+    const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
     const navigate = useNavigate();
     const dispatch = useDispatch()
 
@@ -44,21 +55,25 @@ export default function AdminLogin() {
             password:password
         }
        const response = await adminloginApi(data);
-       console.log(response.data)
        if(!response.data.error){
            dispatch(addStatus("Admin"))
            navigate("/admin/hall")
           }
         else{
-           console.log(response.data)
-           navigate("/");
+            setOpen(true)
+            setpassword('')
         }
-    }
+        }
+
 
 
 
   return (
    <>
+    <Snackbar vertical= 'top'
+          horizontal= 'right' open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} style={{background:'#d32f2f',color:'white'}} severity="warning">Incorrect Username/Password</Alert>        
+        </Snackbar>
         
     <div className='admin-login-body'>
 
