@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes,
 } from "react-router-dom";
 import Home from './routes/Home';
 import AdminLoginRoute from './routes/AdminLoginRoute';
@@ -36,33 +36,41 @@ function App() {
     
     <Router>
         <Routes>
+        <Route exact path="/" element={<Home/>} />
 
-
-        {
-          (user.status === "Authenticated")?
+        {(user.status === "Authenticated") && (
           <>
-            <Route exact path="/" element={<Home/>} />
+          {/* Admin routes */}
+          {user.user === 'Admin' && (
+            <>
             <Route exact path="/admin/hall" element={<AdminHallRoute/>} />
             <Route exact path="/admin/booking" element={<AdminBookingRoute/>} />
             <Route exact path="/admin/department" element={<AdminDepartmentRoute/>} />
             <Route exact path="/admin/department/request" element={<AdminDepartmentRequestRoute/>} />
-            {/* <Route element={NotFound} /> */}
-            <Route exact path="/department/booking" element={<DepartmentBookingRoute/>} />
+            </>
+          )}
+
+          {/* Department routes */}
+          {user.user === 'Department' && (
+            <>
+             <Route exact path="/department/booking" element={<DepartmentBookingRoute/>} />
             <Route exact path="/department/booking/history" element={<DepartmentHistoryRoute/>} />
             </>
-          :
+          )}
+
+          {/* Default route for authenticated users */}
+          {/* <Redirect to="/" /> */}
+          </>
+        )}
+
+      {(user.status === "Not Authenticated") && (
+          
             <>
-            <Route exact path="/" element={<Home/>} />
             <Route exact path="/admin_login" element={<AdminLoginRoute/>} />
             <Route exact path="/department_login" element={<DepartmentLoginRoute/>} />
             <Route exact path="/department_register" element={<DepartmentRegisterRoute/>} />
-            
-  
-  
-            
-          
             </>
-        }
+        )}
 
 
 
