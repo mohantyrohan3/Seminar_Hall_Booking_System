@@ -38,3 +38,35 @@
     margin-left: 0.5rem;
     font-size: 1.3rem;
 }
+
+
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background: linear-gradient(264.79deg, #3A517C 0%, #314064 100%);
+    /* border: 2px solid #000; */
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.modal-text{
+    color:white !important;
+    font-family: 'Julee', cursive !important;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .modal{
+        width: 70%;
+    }
+  }
+
+  @media only screen and (max-width: 3000px) {
+    .modal{
+        width: 80%;
+    }
+  }

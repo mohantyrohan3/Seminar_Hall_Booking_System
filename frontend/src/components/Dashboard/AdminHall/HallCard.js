@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import EventSeatIcon from '@mui/icons-material/EventSeat';
 import Grid from '@mui/material/Grid';
 
-export default function HallCard() {
+export default function HallCard(props) {
   return (
    <>
 
@@ -20,16 +20,16 @@ export default function HallCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" className='hall-card-text'>
-          HALL-NAME
+          {props.data.name}
         </Typography>
         <Typography variant="body2" color="text.secondary" className='hall-card-text'>
           <EventSeatIcon fontSize="large"  />
-          <span className='number-seat'>100</span>
+          <span className='number-seat'>{props.data.capacity}</span>
         </Typography>
       </CardContent>
       <Grid container spacing={2} justifyContent={'center'}>
         <Grid item xs={8} sm={5} md={4} lg={4} xl={4}>
-        <Button size="medium" fullWidth className='btn-admin-hall'>STATUS</Button>
+        <Button size="medium" fullWidth className='btn-admin-hall'>{props.data.status}</Button>
         </Grid>
       </Grid>
       </Card>
