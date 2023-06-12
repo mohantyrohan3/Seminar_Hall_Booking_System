@@ -1,56 +1,72 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Appbar from '../AppBar/AppBar'
 import "./AdminBooking.css"
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+import AdminBookingCard from './AdminBookingCard';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import axios from 'axios';
 
 
-const number = [1,2,3,4,5];
+// const list = number.map(()=>{
+//     return(
+//         <AdminBookingCard/>
+//     )
+// })
 
 export default function AdminBooking() {
-    const list = number.map(()=>{
-        return(
-            <Grid item xs={10} sm={8} md={8} lg={8} xl={8} style={{marginBottom:'0.5rem'}}>
-            <div className='request-div-admin'>
 
-             <h2 className='admin-booking-request-title'>HALL NAME</h2>
+    const [list, setlist] = useState([]);
+    const [open, setOpen] = useState(true);
 
-             <div className='admin-booking-request-desc-div'>
-             <span className='admin-booking-request-desc'>DEPARTMENT</span>
-             <span className='admin-booking-request-desc'>EVENT NAME</span>
-             </div>
-
-             <Grid container spacing={3} justifyContent={'center'}>
-     
-
-                 <Grid item xs={10} sm={8} md={7} lg={5} xl={3} alignItems={'end'}>
-
-                 <Button size="small" type='submit' className='btn-admin-booking-request-accept' fullWidth>ACCEPT</Button>
-                 </Grid>
-
-
-                 <Grid item xs={10} sm={8} md={7} lg={5} xl={3}>
-                 <Button size="small" type='submit' className='btn-admin-booking-request-reject' fullWidth>REJECT</Button>
-                 </Grid>
-
-
-
-                 
-             </Grid>
+    
+    const get_booking_requests = async ()=>{
+        setOpen(true)
+        try{
+          const response = await axios.get('https://seminar.rohankm.online/api/booking/show_booking_requests',{
+            withCredentials:true
+          })
+          console.log(response)
+          let temp = response.data.booking_requests.map((data)=>{
+            return(
+             <AdminBookingCard data = {data} getrequest={get_booking_requests}/>
+            )
+          })
+          setlist(temp)
+          setOpen(false)
+        }
+    
+        catch(err){
+          console.log(err)
+        }
+    
+    
+      }
 
 
 
-             </div> 
-         </Grid>
-        )
-    })
+
+
+    useEffect(() => {
+        get_booking_requests();
+      }, []);
+
+
+   
 
     
 
 
 
   return (
-    <>
+    <>  
+
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
         
         <div className='admin-booking-body'>
             <Appbar/>
