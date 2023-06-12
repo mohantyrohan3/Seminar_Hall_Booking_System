@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link, redirect } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { removeStatus } from "../../../store/slices/userSlice";
@@ -21,6 +21,8 @@ import { removeStatus } from "../../../store/slices/userSlice";
 
 export default function Appbar() {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
 
     const logout = async ()=> {
       try{
@@ -28,7 +30,7 @@ export default function Appbar() {
           withCredentials:true
         });
         dispatch(removeStatus());
-        redirect('/')
+        navigate('/admin_login')
       }
       catch{
 

@@ -47,6 +47,8 @@ function App() {
             <Route exact path="/admin/department" element={<AdminDepartmentRoute/>} />
             <Route exact path="/admin/department/request" element={<AdminDepartmentRequestRoute/>} />
             {/* <Route element={NotFound} /> */}
+            <Route exact path="/department/booking" element={<DepartmentBookingRoute/>} />
+            <Route exact path="/department/booking/history" element={<DepartmentHistoryRoute/>} />
             </>
           :
             <>
@@ -58,8 +60,7 @@ function App() {
   
   
             
-            <Route exact path="/department/booking" element={<DepartmentBookingRoute/>} />
-            <Route exact path="/department/booking/history" element={<DepartmentHistoryRoute/>} />
+          
             </>
         }
 

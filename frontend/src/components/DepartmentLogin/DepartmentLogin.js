@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './DepartmentLogin.css'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,16 +11,55 @@ import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
+import {departmentLoginApi} from "../../api/departmentloginapi"
+import { useDispatch } from 'react-redux';
+import { addStatus } from '../../store/slices/userSlice';
 
-
-const handleSubmit = (e)=>{
-    // e.preventDefault()
-    console.log('Hello')
-}
 
 export default function DepartmentLogin() {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    
+
+    const handleEmail = (e)=>{
+        setEmail(e.target.value)
+    }
+    const handlePassword = (e)=>{
+        setPassword(e.target.value)
+    }
+
+
+
+    const handleSubmit = async (e)=>{
+        e.preventDefault()
+        const data = {
+            email:email,
+            password:password
+        }
+        const response = await departmentLoginApi(data);
+       console.log(response.data)
+       if(!response.data.error){
+           dispatch(addStatus("Admin"))
+           navigate("/department/booking")
+          }
+        else{
+           console.log(response.data)
+           navigate("/");
+        }
+    }
+
+
+
+
   return (
     <>
     <div className='department-login-body'>
@@ -48,6 +87,8 @@ export default function DepartmentLogin() {
 
                                 <FormControl fullWidth> 
                                      <Input
+                                     value={email}
+                                     onChange={handleEmail}
                                      disableUnderline={true}
                                      type='email'
                                      placeholder="Email"
@@ -67,7 +108,9 @@ export default function DepartmentLogin() {
                         <Grid item xs={11} sm={9} md={8} lg={9} xl={9}>
 
                         <FormControl  fullWidth error>
-                             <Input
+                             <Input     
+                                    value={password}
+                                    onChange={handlePassword}
                                      type='password'
                                      placeholder="Password"
                                      required={true}

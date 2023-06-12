@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./AdminLogin.css"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,17 +13,18 @@ import EmailIcon from '@mui/icons-material/Email';
 import HttpsIcon from '@mui/icons-material/Https';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { adminloginApi } from '../../api/adminloginapi';
+import { addStatus } from '../../store/slices/userSlice';
+import { useDispatch } from 'react-redux';
 
-const handleSubmit = (e)=>{
-    // e.preventDefault()
-    console.log('Hello')
-}
+
+
+
 
 
 export default function AdminLogin() {
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
@@ -45,20 +46,9 @@ export default function AdminLogin() {
        const response = await adminloginApi(data);
        console.log(response.data)
        if(!response.data.error){
-           console.log(response.data.error)
-           navigate("/admin/hall");
-           axios.get('https://seminar.rohankm.online/api/details', {
-               withCredentials: true
-             })
-             .then(function (response) {
-               console.log(response)
-             })
-             .catch(function (error) {
-               console.log(error);
-             })
+           dispatch(addStatus("Admin"))
+           navigate("/admin/hall")
           }
-
-
         else{
            console.log(response.data)
            navigate("/");
