@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from "react";  
+import React, { useEffect } from "react";  
 import {
   BrowserRouter as Router,
   Route,
@@ -15,46 +15,31 @@ import AdminDepartmentRoute from './routes/AdminDepartmentRoute';
 import AdminDepartmentRequestRoute from './routes/AdminDepartmentRequestRoute';
 import DepartmentBookingRoute from './routes/DepartmentBookingRoute';
 import DepartmentHistoryRoute from './routes/DepartmentHistoryRoute';
-import axios from 'axios';
+
+import { checkauth } from './store/slices/userSlice';
+import { useSelector,useDispatch } from 'react-redux'
 
 
 function App() {
-
-  const [auth, setauth] = useState(null);
-
+  const dispatch = useDispatch();
+  const user = useSelector((state)=> state.user)
   
   useEffect(() => {
-    axios.get('https://seminar.rohankm.online/api/details', {
-      withCredentials: true
-          })
-          .then(function (response) {
-            if(response.data.status === 'Authenticated'){
-              setauth(true);
-              console.log(response.data)
-            }
-            else{
-              setauth(false)
-              console.log(response.data)
-            }
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-  },);
-
+    dispatch(checkauth());
+  },[user.status]);
 
 
 
 
   return (
     <>
-
+    
     <Router>
         <Routes>
 
 
         {
-          (auth)?
+          (user.status === "Authenticated")?
           <>
             <Route exact path="/" element={<Home/>} />
             <Route exact path="/admin/hall" element={<AdminHallRoute/>} />
@@ -101,7 +86,6 @@ function App() {
 
 
     {/* <Loading/> */}
-    
     </>
   );
 }

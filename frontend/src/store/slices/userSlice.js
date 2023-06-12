@@ -1,4 +1,6 @@
-import createSlice from '@reduxjs/toolkit/createSlice';
+import { createSlice } from '@reduxjs/toolkit';
+import axios from "axios";
+
 
 
 const initialState = {
@@ -27,6 +29,24 @@ export const {addStatus , removeStatus} = userSlice.actions;
 export default userSlice.reducer;
 
 
+export function checkauth() {
+    return async function checkAuthThunk(dispatch,getState) {
 
+        try{
+                const response = await axios.get('https://seminar.rohankm.online/api/details', {
+                    withCredentials: true
+                    });
+                if(response.data.status === 'Authenticated'){
+                    dispatch(addStatus(response.data.details.type));
+                }
+                else{
+                    dispatch(removeStatus());
+                }      
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+}
 
 
