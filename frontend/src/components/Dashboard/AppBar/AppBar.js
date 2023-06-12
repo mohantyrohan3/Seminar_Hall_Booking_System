@@ -12,12 +12,32 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { removeStatus } from "../../../store/slices/userSlice";
 
 
-const settings = ['LOGOUT'];
 
 export default function Appbar() {
+    const dispatch = useDispatch()
+
+    const logout = async ()=> {
+      try{
+        const res = await axios.get('https://seminar.rohankm.online/api/logout',{
+          withCredentials:true
+        });
+        dispatch(removeStatus());
+        redirect('/')
+      }
+      catch{
+
+      }
+    }
+
+
+
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
   
@@ -213,11 +233,14 @@ export default function Appbar() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{color:'black'}}>
-                    <Typography textAlign="center" className="dropdown-text"  sx={{color:'black'}}>{setting}</Typography>
+                  <MenuItem  onClick={handleCloseUserMenu} sx={{color:'black'}}>
+                    <Link to="/">
+                    <Typography textAlign="center" className="dropdown-text"  sx={{color:'black'}}>HOME</Typography>
+                    </Link>
                   </MenuItem>
-                ))}
+                  <MenuItem  onClick={handleCloseUserMenu} sx={{color:'black'}}>
+                    <Typography textAlign="center" className="dropdown-text" onClick={logout}  sx={{color:'black'}}>LOGOUT</Typography>
+                  </MenuItem>
               </Menu>
             </Box>
           </Toolbar>
