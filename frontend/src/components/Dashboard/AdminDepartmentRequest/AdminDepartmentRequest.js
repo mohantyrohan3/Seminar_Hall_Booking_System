@@ -1,18 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./AdminDepartmentRequest.css"
 import Appbar from '../AppBar/AppBar'
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Person2Icon from '@mui/icons-material/Person2';
-import EmailIcon from '@mui/icons-material/Email';
 import { Container } from '@mui/material';
+import axios from 'axios';
+import AdminDepartmentRequestCard from './AdminDepartmentRequestCard';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
-const pages = [1,2,3,4,5,6];
 
 
 
@@ -24,51 +20,54 @@ const pages = [1,2,3,4,5,6];
 export default function AdminDepartmentRequest() {
 
 
-    const list = pages.map(()=>{
-        return (
-            <Grid item xs={10} sm={8} md={8} lg={8} xl={4} style={{marginBottom:'0.5rem'}}>
-
-            <Card sx={{ width:'100%'}} className='department-request-admin-card'>
-                    
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" className='department-admin-request-text'>
-                        DEPARTMENT
-                        </Typography>
-
-                        <br/>
-
-                        <Typography variant="body2" className='department-admin-request-text'>
-                            <Person2Icon sx={{marginRight:'1rem'}} />
-                            HEAD OF THE DEPARTMENT
-                        </Typography>
-
-                        <br/>
-                        <Typography variant="body2" className='department-admin-request-text'>
-                            <EmailIcon sx={{marginRight:'1rem'}} />
-                            EMAIL
-                        </Typography>
-
-
-                    </CardContent>
-                    <CardActions>
-                        <Button className='btn-admin-booking-request-accept' size="medium">ACCEPT</Button>
-                        <Button className='btn-admin-booking-request-reject' size="medium">REJECT</Button>
-                    </CardActions>
-                    </Card>
+    const [list, setlist] = useState([]);
+    const [open, setOpen] = useState(true);
+    const handleClose = () => {
+        setOpen(false);
+      };
 
 
 
 
-             </Grid>
+    const get_department_requests = async()=> {
+        
+        try{
+            const response = await axios.get("https://seminar.rohankm.online/api/department/show_department_requests", {
+                withCredentials:true
+            });
+            const temp = response.data.requests.map((data)=>{
+                return (
+                <AdminDepartmentRequestCard data={data}/>
+                )
+            })
+            setlist(temp)
+        }
 
-        )
-    })
+        catch(error) {
+            console.log(error)
+        }
 
+        setOpen(false);
+    }
+
+
+
+    useEffect(() => {
+        get_department_requests()
+    }, []);
 
 
 
   return (
-   <>
+   <>   
+
+        <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+        >
+        <CircularProgress color="inherit" />
+        </Backdrop>
         <div className='admin-department-request-div'>
 
             <Appbar/>
