@@ -15,7 +15,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { Link, useNavigate } from 'react-router-dom';
 import { adminloginApi } from '../../api/adminloginapi';
 import { addStatus } from '../../store/slices/userSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 
@@ -65,6 +65,11 @@ export default function AdminLogin() {
         }
         }
 
+
+        const auth = useSelector((state)=> state.user)
+        if(auth.status === "Authenticated"){
+            navigate("/admin/hall");
+        }
 
 
 

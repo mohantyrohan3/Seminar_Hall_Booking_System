@@ -14,7 +14,7 @@ export default function DepartmentBooking() {
     const list = pages.map(()=>{
         return(
           <Grid item xs={11} sm={7} md={5} lg={4} xl={4}>
-              <HallCard/>
+              {/* <HallCard/> */}
         </Grid>
         )
       })

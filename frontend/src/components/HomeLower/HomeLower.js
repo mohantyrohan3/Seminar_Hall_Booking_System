@@ -6,8 +6,13 @@ import HomeCard from '../HomeCard/HomeCard';
 import HomeFooter from '../HomeFooter/HomeFooter';
 import { Link } from 'react-router-dom';
 import { Slide } from "react-awesome-reveal";
+import { useSelector } from 'react-redux';
 
 export default function HomeLower() {
+
+
+  const auth = useSelector((state)=> state.user)
+  
   return (
     <>
     <div className='lower-div'>
@@ -40,7 +45,13 @@ export default function HomeLower() {
          
         <Grid item justifyContent={'center'} alignItems={'center'}>
                 <Button size='large' variant="contained" className='btn' disableElevation>
-                <Link to="/department_login">BOOK NOW</Link>
+                {
+                (auth.status === "Authenticated" && auth.user === "Department")?(
+                  <Link to="/department/booking">BOOK NOW</Link>
+                  ):(
+                    <Link to="/department_login">BOOK NOW</Link>
+                    )
+              }
             </Button>
         </Grid>
       </Grid>

@@ -3,8 +3,12 @@ import "./HomeUpper.css"
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function HomeUpper() {
+
+  
+  const auth = useSelector((state)=> state.user)
   return (
    <>
     <div className='upper-div'>
@@ -19,10 +23,22 @@ export default function HomeUpper() {
             <Link to="/">HOME</Link>
             </div>
             <div  className='list-item-children'>
-            <Link to="/admin_login">ADMIN</Link>
+              {
+                (auth.status === "Authenticated" && auth.user==='Admin')?( 
+                  <Link to="/admin/hall">ADMIN</Link>
+                ):(
+                  <Link to="/admin_login">ADMIN</Link>
+                )
+              }
             </div>
             <div  className='list-item-children'>
-            <Link to="/department_login">DEPARTMENT</Link>
+            {
+                (auth.status === "Authenticated" && auth.user === "Department")?(
+                  <Link to="/department/booking">DEPARTMENT</Link>
+                  ):(
+                    <Link to="/department_login">DEPARTMENT</Link>
+                    )
+              }
             </div>
           </div>
 

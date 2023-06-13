@@ -7,9 +7,15 @@ import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import "./HomeCard.css"
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 export default function HomeCard() {
+
+
+  const auth = useSelector((state)=> state.user);
+
+
   return (
     <>
 
@@ -26,7 +32,13 @@ export default function HomeCard() {
                 </CardContent>
                 <CardActions className='btn-card-home'>
                 <Button size="medium" className='btn-home-card-btn'>
-                <Link to="/admin_login">LOGIN HERE</Link>
+                {
+                (auth.status === "Authenticated" && auth.user==='Admin')?( 
+                  <Link to="/admin/hall">LOGIN HERE</Link>
+                ):(
+                  <Link to="/admin_login">LOGIN HERE</Link>
+                )
+              }
                 </Button>
                 </CardActions>
 
@@ -48,7 +60,13 @@ export default function HomeCard() {
                 </CardContent>
                 <CardActions className='btn-card-home'>
                 <Button size="medium" className='btn-home-card-btn'>
-                <Link to="/department_login">LOGIN HERE</Link>
+                {
+                (auth.status === "Authenticated" && auth.user === "Department")?(
+                  <Link to="/department/booking">LOGIN HERE</Link>
+                  ):(
+                    <Link to="/department_login">LOGIN HERE</Link>
+                    )
+              }
                 </Button>
                 </CardActions>
                 </Card>
