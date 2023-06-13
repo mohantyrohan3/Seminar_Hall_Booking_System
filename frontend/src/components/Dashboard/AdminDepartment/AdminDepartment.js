@@ -35,7 +35,7 @@ export default function AdminDepartment() {
 
     const createDepartment = ()=>{
         setmodal(true)
-      }
+    }
 
       const handleClose = () =>{
        setmodal(false)
