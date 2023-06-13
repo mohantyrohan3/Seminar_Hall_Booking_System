@@ -7,8 +7,36 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import EventSeatIcon from '@mui/icons-material/EventSeat';
 import Grid from '@mui/material/Grid';
+import {clearHallApi} from '../../../api/clearhallapi'
+
+
 
 export default function HallCard(props) {
+
+
+
+
+  const changeStatus = async ()=>{
+    try{
+
+        const data = {
+          name:props.data.name
+        }
+        const res = await clearHallApi(data);
+        console.log(res) 
+        props.gethall()
+        }
+    catch(err){
+      console.log(err)
+    }
+  }
+
+
+
+
+
+
+
   return (
    <>
 
@@ -29,7 +57,7 @@ export default function HallCard(props) {
       </CardContent>
       <Grid container spacing={2} justifyContent={'center'}>
         <Grid item xs={8} sm={5} md={4} lg={4} xl={4}>
-        <Button size="medium" fullWidth className='btn-admin-hall'>{props.data.status}</Button>
+        <Button size="medium" fullWidth className='btn-admin-hall' onClick={changeStatus}>{props.data.status}</Button>
         </Grid>
       </Grid>
       </Card>

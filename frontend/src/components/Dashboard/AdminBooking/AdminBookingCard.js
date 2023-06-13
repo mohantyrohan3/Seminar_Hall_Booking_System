@@ -10,6 +10,30 @@ export default function AdminBookingCard(props) {
 
 
     const id = props.data._id;
+    
+
+    const acceptRequest = async ()=> {
+
+        try{
+            const data ={
+                decision:"Yes",
+                id:id,
+                name:props.data.hall,
+                department:props.data.department.department,
+                event:props.data.event
+            }
+            const response = await changeBookingRequestApi(data)
+            console.log(response);
+            props.getrequest()
+        }
+
+        catch(err){
+            console.log(err)
+        }
+    }
+
+
+
 
 
     const cancelRequest = async ()=> {
@@ -52,7 +76,7 @@ export default function AdminBookingCard(props) {
 
              <Grid item xs={10} sm={8} md={7} lg={5} xl={3} alignItems={'end'}>
 
-             <Button size="small" type='submit' className='btn-admin-booking-request-accept' fullWidth>ACCEPT</Button>
+             <Button size="small" type='submit' className='btn-admin-booking-request-accept' onClick={acceptRequest} fullWidth>ACCEPT</Button>
              </Grid>
 
 

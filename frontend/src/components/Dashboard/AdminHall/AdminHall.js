@@ -42,7 +42,7 @@ export default function AdminHall() {
 
 
   const get_halls = async ()=>{
-
+    setOpen(true)
     try{
       const response = await axios.get('https://seminar.rohankm.online/api/hall/view_halls',{
         withCredentials:true
@@ -50,7 +50,7 @@ export default function AdminHall() {
       let temp = response.data.halls.map((data)=>{
         return(
           <Grid item xs={11} sm={7} md={5} lg={4} xl={4}>
-              <HallCard data={data}/>
+              <HallCard data={data} gethall = {get_halls}/>
             </Grid>
         )
       })
@@ -62,7 +62,7 @@ export default function AdminHall() {
       console.log(err)
     }
 
-
+    setOpen(false)
   }
 
 
