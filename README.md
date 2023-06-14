@@ -32,7 +32,7 @@ report on the status and history of seminar halls
 
 ## Demo
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/A_uFV_WdiH0/0.jpg)](https://www.youtube.com/watch?v=A_uFV_WdiH0)
 
 Try Out Here
 https://seminar.rohankm.online/
