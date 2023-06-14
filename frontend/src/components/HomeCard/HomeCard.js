@@ -27,7 +27,7 @@ export default function HomeCard() {
                         ADMIN
                         </Typography>
                         <Typography variant="body1" color="text.secondary" className='text-card-home'  style={{fontSize:"large"}}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore reprehenderit quia pariatur architecto ad perferendis itaque beatae ut, quasi, delectus in molestias a nulla mollitia accusantium similique, eum nostrum rerum!
+                        ADMIN HAS THE PRIVILEGE OF CREATING DEPARTMENT , CREATING HALLS , VIEW BOOKINGS ALSO APPROVE OR REJECT THE NOOKING REQUESTS. THEY ALSO CLEAR THE STATUS OF HALLS
                         </Typography>
                 </CardContent>
                 <CardActions className='btn-card-home'>
@@ -55,7 +55,7 @@ export default function HomeCard() {
                         DEPARTMENT
                         </Typography>
                         <Typography variant="body1" color="text.secondary" className='text-card-home' style={{fontSize:"large"}}>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum inventore doloremque earum excepturi, modi commodi magnam blanditiis. Adipisci, vitae provident! Atque magni assumenda aperiam illum sapiente eligendi amet ea harum.
+                        HEAD OF THE DEPARTMENT ARE GIVEN UNIQUE EMIAL AND PASSWORD FOR LOGGING IN , OR EVEN THEY CAN REQUEST THEIR DEPARTMENT, THEY WILL GET PASSOWORD ON ACCEPTANCE IN THEIR EMAILS. THEY CAN BOOK HALLS
                         </Typography>
                 </CardContent>
                 <CardActions className='btn-card-home'>

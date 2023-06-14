@@ -28,10 +28,9 @@ export default function HomeLower() {
 
 
 
-        <div className='desc'>
+        <div className='desc' style={{textTransform:'capitalize'}}>
             <div>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam sint mollitia aut provident quam et at non, itaque molestias porro sed placeat cum perspiciatis autem eaque ducimus, magnam nulla corporis!
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam sint mollitia aut provident quam et at non, itaque molestias porro sed placeat cum.
+            Our Seminar Hall Booking System is designed to streamline the entire process of reserving and managing seminar halls online. It provides a convenient and centralized platform for both event organizers and venue administrators, ensuring a seamless experience for all users involved.
                
             </div>
 
