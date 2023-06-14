@@ -85,7 +85,7 @@ export default function DepartmentAppBar() {
             textDecoration: 'none',
           }}
         >
-          DEPARTMENT NAME
+          DEPARTMENT
         </Typography>
         
 
@@ -158,7 +158,7 @@ export default function DepartmentAppBar() {
           }}
         >
           
-          DEPARTMENT NAME
+          DEPARTMENT
 
         </Typography>
 
