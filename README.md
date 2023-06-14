@@ -36,3 +36,7 @@ report on the status and history of seminar halls
 
 Try Out Here
 https://seminar.rohankm.online/
+
+## Admin Credentials
+email - admin@gmail.com
+password - 1234
