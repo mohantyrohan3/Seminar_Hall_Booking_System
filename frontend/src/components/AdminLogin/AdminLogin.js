@@ -67,7 +67,7 @@ export default function AdminLogin() {
 
 
         const auth = useSelector((state)=> state.user)
-        if(auth.status === "Authenticated"){
+        if(auth.status === "Authenticated" && auth.user==='Admin'){
             navigate("/admin/hall");
         }
 

@@ -129,11 +129,11 @@ export default function DepartmentAppBar() {
                 </Link>
               </MenuItem>
 
-              <MenuItem  onClick={handleCloseNavMenu}>
+              {/* <MenuItem  onClick={handleCloseNavMenu}>
                 <Link to='/department/booking/history'>
                 <Typography sx={{color:'black'}} className="dropdown-text" textAlign="center" >MY BOOKINGS</Typography>
                 </Link>
-              </MenuItem>
+              </MenuItem> */}
             
           </Menu>
         </Box>
@@ -178,7 +178,7 @@ export default function DepartmentAppBar() {
 
 
 
-          <Link to='/department/booking/history'>
+          {/* <Link to='/department/booking/history'>
             <Button
             
               onClick={handleCloseNavMenu}
@@ -187,7 +187,7 @@ export default function DepartmentAppBar() {
             >
               YOUR BOOKINGS
             </Button>
-           </Link>
+           </Link> */}
 
 
 
