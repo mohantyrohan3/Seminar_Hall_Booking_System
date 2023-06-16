@@ -40,3 +40,36 @@ https://seminar.rohankm.online/
 ## Admin Credentials
 email - admin@gmail.com
 password - 1234
+
+
+# Setup
+
+## Frontend
+
+1. Open the frontend folder in cmd
+2. Install everything using `npm install`
+3. Start using `npm run start`
+
+## Backend
+
+1. Open the frontend folder in cmd
+2. Install everything using `npm install`
+3. Build the frontend site using `npm run build`
+4. Open the backend folder in cmd
+5. Install everything using `npm install`
+6. Create the constants.js file inside backend/routes folder
+7. Start using `npm run start`
+
+## contants.js file
+
+Path: `backend/routes`
+
+Content:
+
+```
+EMAIL : "your email whose 2 step verification is done"
+PASSWORD : "App Password Generated "
+MONGO_Password : "Mongo DB Atlas Password"
+```
+Get Your App Password from your account after going to security settings after enabling 2 step verification.Put the App passord inside PASSWORD
+
